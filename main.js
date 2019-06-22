@@ -87,7 +87,6 @@ client.on('message', message=>{
     message.guild.channels.find("id","581827830967435274").setName(`オフラインユーザー: ${message.guild.members.filter(member => member.presence.status === 'offline').size}`);
     message.guild.channels.find("id","581833625545474048").setName(`ボットカウント: ${message.guild.members.filter(member => member.user.bot).size}`);
     message.guild.channels.find("id","581834860126273556").setName(`ユーザーカウント: ${message.guild.members.filter(member => !member.user.bot).size}`);
-    message.guild.channels.find("id","581836402376048650").setName(`ﾒｯｾｰｼﾞｶｳﾝﾄ: ${message.channel.messages.size}(準備中)`);
 });
 
 
