@@ -9,7 +9,9 @@
     "async": "^3.1.0",
     "moment-timezone": "^0.5.26",
     "fs": "^0.0.2",
-    "moji": "git+https://github.com/niwaringo/moji.git"
+    "ecstar": "github:mouse484/Ecstar#master",
+    "moji": "git+https://github.com/niwaringo/moji.git",
+    "dotenv": "^8.0.0"
   },
   "devDependencies": {},
   "scripts": {
