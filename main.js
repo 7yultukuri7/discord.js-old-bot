@@ -43,7 +43,7 @@ client.on('guildMemberRemove', async member => {
 client.on('ready', message =>
 {
 	console.log('bot is ready!(ボットの準備はできています！)');
-  client.user.setActivity('サーバーによって、動作(prefix,command)が異なります。')
+  client.user.setActivity('サーバーによって、プレフィクス, コマンドが異なります。')
 });
 
 if(process.env.DISCORD_BOT_TOKEN == undefined)

@@ -27,6 +27,7 @@ class pageMenu {
     if (page.url) embed.setURL(page.url);
 
     if (page.color) embed.setColor(page.color);
+  
 
     return embed;
   }
@@ -122,7 +123,7 @@ class pageMenu {
         .send({
           embed: new Discord.RichEmbed()
             .setColor(this.waitingColor)
-            .setAuthor("ドキュメントビューア")
+            .setAuthor(`${message.author.tag} / ${message.author.id}`, message.author.avatarURL)
             .setDescription(this.waitingText)
             .setTimestamp()
         })

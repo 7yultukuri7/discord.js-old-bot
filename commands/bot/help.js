@@ -1,6 +1,7 @@
 const { command } = require("ecstar");
 const pageMenu = require('/app/system/pagemenu');
 const config = require("/app/config");
+const discord = require("discord.js");
 
 module.exports = class extends command {
     constructor(client) {
@@ -18,11 +19,15 @@ module.exports = class extends command {
                 title: "ドキュメントビューア / ヘルプ",
                 description: "注意: ｢ドキュメントビューア｣は、使ったあとは⏹をクリック・タップしてください。",
                 color: Math.floor(Math.random() * 16777214) + 1,
-                author: {
-                    name: client.user.username,
-                    icon_url: client.user.avatarURL,
-                },
+              	author: {
+              		name: `${message.author.tag} / ${message.author.id}`,
+              		icon_url: message.author.avatarURL,
+              	},
                 fields: [
+                    {
+                        name: "ドキュメントビューア / ヘルプ",
+                        value: "注意: ｢ドキュメントビューア｣は、使ったあとは⏹をクリック・タップしてください。",
+                    },
                     {
                         name: "プレフィクス・コマンドについて",
                         value: "このサーバーのコマンドのプレフィックスは`"+config.prefix+"`です。\nhelpに載ってある全てのコマンドは`io!`で使用出来ます。\nサーバーによって、`プレフィクス`, `コマンド` が異なります。\n**\n**",
@@ -61,7 +66,7 @@ module.exports = class extends command {
                     },
                     {
                         name: "⏭",
-                        value: "一つの操作に3秒～10秒程度の時間がかかります。\n目次は2ページ目にあります。\n**\n**",
+                        value: "一つの操作に3秒～10秒程度の時間がかかります。\n~目次は2ページ目にあります。~\n**\n**",
                     },
                 ]
             },
@@ -98,8 +103,8 @@ module.exports = class extends command {
                 description: description1,
                 color: Math.floor(Math.random() * 16777214) + 1,
                 author: {
-                    name: client.user.username,
-                    icon_url: client.user.avatarURL,
+                    name: message.client.user.tag,
+                    icon_url: message.client.user.avatarURL,
                 },
                 fields: [
                     {
