@@ -62,18 +62,6 @@ module.exports = class extends command {
                         value: guilds.emojis.size,
                     },
                     {
-                        name: "ユーザーの数",
-                        value: guilds.memberCount,
-                    },
-                    {
-                        name: "メンバー",
-                        value: checkMembers(guilds),
-                    },
-                    {
-                        name: "ボット",
-                        value: checkBots(guilds),
-                    },
-                    {
                         name: "AFKチャンネル",
                         value: guilds.afkChannel
                             ? guilds.afkChannel.name
@@ -92,25 +80,16 @@ module.exports = class extends command {
                         value: createdAt,
                     },
                     {
-                        name: "オンラインメンバー",
-                        value: guilds.members.filter(m => m.user.presence.status == "online").size,
+                        name: "ステータス",
+                        value: "ユーザー数"+guilds.memberCount
+                            +"\nメンバー"+checkMembers(guilds)
+                            +"\nボット"+checkBots(guilds)
+                            +"\n<:Online:608614124758368256>"+guilds.members.filter(m => m.user.presence.status == "online").size
+                            +"\n<:Idle:608614090738499594>"+guilds.members.filter(m => m.user.presence.status == "idle").size
+                            +"\n<:dnd:608614113513439252>"+guilds.members.filter(m => m.user.presence.status == "dnd").size
+                            +"\n<:Offline:608614103099113483>"+guilds.members.filter(m => m.user.presence.status == "offline").size,
                         inline: true
                     },
-                    {
-                        name: "退席中メンバー",
-                        value: guilds.members.filter(m => m.user.presence.status == "idle").size,
-                        inline: true
-                    },
-                    {
-                       name: "取り込み中メンバー",
-                       value: guilds.members.filter(m => m.user.presence.status == "dnd").size,
-                       inline: true
-                   },
-                   {
-                       name: "オフラインメンバー",
-                       value: guilds.members.filter(m => m.user.presence.status == "offline").size,
-                       inline: true
-                   },
                 ],
                 color: Math.floor(Math.random() * 16777214) + 1,
               }]);

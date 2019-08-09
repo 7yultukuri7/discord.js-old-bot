@@ -32,6 +32,50 @@ client.on("message", async message => {
   } 
 });
 
+client.on("message", async message => {
+  function getUserFromMention(mention) {
+	if (!mention) return;
+
+	if (mention.startsWith('<@') && mention.endsWith('>')) {
+		mention = mention.slice(2, -1);
+
+		if (mention.startsWith('!')) {
+			mention = mention.slice(1);
+		}
+
+		return client.users.get(mention);
+	}
+}
+    if (message.author.id == "159985870458322944") {//me6
+  const args = message.content.slice(config.prefix).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+   if(message.content.startsWith("io!levelup")) {
+      const tx = args.join(' ');
+      if (message.author.id == "352394784440320020") {
+        var embedabout = new discord.RichEmbed()
+           .setAuthor("レベルアップ！")
+           .setDescription(args[1]+" さん、レベル `"+args[0]+"` に上がっています！！！")
+          .setColor(Math.floor(Math.random() * 16777214) + 1)
+          .setFooter(message.guild.name, message.guild.iconURL)
+          .setTimestamp()
+      message.channel.send(embedabout);
+     const memberid = message.guild.members.get(getUserFromMention(args[1]).id);
+        switch (args[0]) {
+          case "1": 
+            memberid.addRole("543616130149908540").catch(console.error);
+            ; break
+          case "5": 
+            memberid.addRole("543616135527137300").catch(console.error);
+            ; break    
+          case "10": 
+            memberid.addRole("543616146922799115").catch(console.error);
+            ; break    
+}
+        message.delete(10000)
+      }
+  }
+}});
+//{player}さんは、レベル ``{level}`` に上がっています！ 
 client.on('guildMemberAdd', async member => {
 if (member.guild.id === '543615084618842132'){
   require("./system/canvas-member-join")(client, member);
@@ -43,68 +87,7 @@ client.on('guildMemberRemove', async member => {
 });
 
 //--------------------------------------------
-//ポイントシステムのなんかあれだよあれ(?)
-const SQLite = require("better-sqlite3");
-const sql = new SQLite("./scores.sqlite");
 
-client.on("ready", () => {
-  // Check if the table "points" exists.
-  const table = sql
-    .prepare(
-      "SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'scores';"
-    )
-    .get();
-  if (!table["count(*)"]) {
-    // If the table isn't there, create it and setup the database correctly.
-    sql
-      .prepare(
-        "CREATE TABLE scores (id TEXT PRIMARY KEY, user TEXT, guild TEXT, points INTEGER, level INTEGER);"
-      )
-      .run();
-    // Ensure that the "id" row is always unique and indexed.
-    sql.prepare("CREATE UNIQUE INDEX idx_scores_id ON scores (id);").run();
-    sql.pragma("synchronous = 1");
-    sql.pragma("journal_mode = wal");
-  }
-
-  // And then we have two prepared statements to get and set the score data.
-  client.getScore = sql.prepare(
-    "SELECT * FROM scores WHERE user = ? AND guild = ?"
-  );
-  client.setScore = sql.prepare(
-    "INSERT OR REPLACE INTO scores (id, user, guild, points, level) VALUES (@id, @user, @guild, @points, @level);"
-  );
-  });
-
-client.on("message", async message => {
-  if (message.author.bot) return;
-    let score = client.getScore.get(message.author.id, message.guild.id);
-  if (!score) {
-    score = {
-      id: `${message.guild.id}-${message.author.id}`,
-      user: message.author.id,
-      guild: message.guild.id,
-      points: 0,
-      level: 1
-    };
-  }
-
-  // Increment the score
-  score.points++;
-
-  // Calculate the current level through MATH OMG HALP.
-  const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
-
-  // Check if the user has leveled up, and let them know if they have:
-  if (score.level < curLevel) {
-    // Level up!
-    score.level++;
-    message.channel.send(`おめでとう、君のレベルは**${curLevel}**になった。`);
-  }
-
-  // This looks super simple because it's calling upon the prepared statement!
-  client.setScore.run(score);
-  });
 //--------------------------------------------
 //Discord bot token
 client.on('ready', message =>
