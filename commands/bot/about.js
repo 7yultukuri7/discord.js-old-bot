@@ -1,5 +1,6 @@
 const { command } = require("ecstar");
 const config = require("/app/config");
+const discord = require('discord.js');
 
 module.exports = class extends command {
     constructor(client) {
@@ -8,14 +9,11 @@ module.exports = class extends command {
         });
     }
     run(message) {
-      const discord = require('discord.js');
         var embedabout = new discord.RichEmbed()
            .setAuthor("概要")
-           .setDescription(
-            "このBotの概要を表示しています。\n"+
-           "")
-          .addField("❯ バージョン","var.1.0.0 Ecstar")
-          .addField("❯ 更新情報","不明")
+           .setDescription("このBotの概要を表示しています。")
+          .addField("❯ バージョン","`var."+config.var+"`")
+          .addField("❯ 更新情報","`var.1.0.0 +plus` ドキュメントビューアを追加しました。\n(Dev: ドキュメントビューア, ecstar, dotenv のライブラリを追加。comaandを分割して、管理しやすいよう変更。)")
           .addField("❯ 製作者","7yultukuri7(id: 352394784440320020)")
           .addField("❯ メインライブラリ","`javascript`, `node.js`, `discord.js`, `ecstar`")
           .addField("❯ サブライブラリ","`async`, `canvas`, `dotenv`, `fs`, `http`, `moji`, `moment-timezone`")

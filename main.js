@@ -7,6 +7,7 @@ const async = require('async');
 const discord = require('discord.js');
 const Ecstar = require("ecstar");
 const fs = require("fs");
+const os = require( 'os' );
 
 //--------------------------------------------
 //ecstar メインファイル
@@ -32,12 +33,15 @@ client.on("message", async message => {
 });
 
 client.on('guildMemberAdd', async member => {
+if (member.guild.id === '543615084618842132'){
   require("./system/canvas-member-join")(client, member);
+};
 });
 
 client.on('guildMemberRemove', async member => {
   require("./system/canvas-member-remove")(client, member);
 });
+
 //--------------------------------------------
 //Discord bot token
 client.on('ready', message =>
@@ -45,7 +49,7 @@ client.on('ready', message =>
 	console.log('bot is ready!(ボットの準備はできています！)');
   client.user.setActivity('サーバーによって、プレフィクス, コマンドが異なります。')
 });
-
+var pjson = require('./package.json');
 if(process.env.DISCORD_BOT_TOKEN == undefined)
 {
   console.log('please set(設定してください) ENV: DISCORD_BOT_TOKEN');

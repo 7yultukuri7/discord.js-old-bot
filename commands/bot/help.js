@@ -1,7 +1,6 @@
 const { command } = require("ecstar");
 const pageMenu = require('/app/system/pagemenu');
 const config = require("/app/config");
-const discord = require("discord.js");
 
 module.exports = class extends command {
     constructor(client) {
@@ -24,10 +23,6 @@ module.exports = class extends command {
               		icon_url: message.author.avatarURL,
               	},
                 fields: [
-                    {
-                        name: "ドキュメントビューア / ヘルプ",
-                        value: "注意: ｢ドキュメントビューア｣は、使ったあとは⏹をクリック・タップしてください。",
-                    },
                     {
                         name: "プレフィクス・コマンドについて",
                         value: "このサーバーのコマンドのプレフィックスは`"+config.prefix+"`です。\nhelpに載ってある全てのコマンドは`io!`で使用出来ます。\nサーバーによって、`プレフィクス`, `コマンド` が異なります。\n**\n**",

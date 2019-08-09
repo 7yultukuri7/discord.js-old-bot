@@ -1,4 +1,10 @@
 const { command } = require("ecstar");
+const config = require("/app/config");
+const os = require( 'os' );
+const async = require('async');
+const Canvas = require('canvas');
+const moment = require("moment-timezone");
+const discord = require("discord.js");
 
 module.exports = class extends command {
     constructor(client) {
