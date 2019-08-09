@@ -12,7 +12,7 @@
     "ecstar": "github:mouse484/Ecstar#master",
     "moji": "git+https://github.com/niwaringo/moji.git",
     "dotenv": "^8.0.0",
-    "speedtest-net": "^1.5.1",
+    "speedtest-net": "^1.5.1"
   },
   "devDependencies": {},
   "scripts": {
