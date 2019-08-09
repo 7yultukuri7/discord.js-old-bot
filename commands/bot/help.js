@@ -5,7 +5,7 @@ const config = require("/app/config");
 module.exports = class extends command {
     constructor(client) {
         super(client, {
-            name: "help",
+            name: ["help"],
         });
     }
 
@@ -61,7 +61,7 @@ module.exports = class extends command {
                     },
                     {
                         name: "⏭",
-                        value: "一つの操作に3秒～10秒程度の時間がかかります。\n~目次は2ページ目にあります。~\n**\n**",
+                        value: "一つの操作に3秒～10秒程度の時間がかかります。\n~~目次は2ページ目にあります。~~\n**\n**",
                     },
                 ]
             },

@@ -32,16 +32,30 @@ class pageMenu {
     return embed;
   }
 
-  addPage(pageOptions) {
-    if (!pageOptions.title || !pageOptions.description)
+ addPage(pageOptions) {
+    if (
+      !pageOptions.title ||
+      !pageOptions.description ||
+      !pageOptions.fields ||
+      !pageOptions.color ||
+      !pageOptions.thumbnail
+    )
       throw new Error("addPageの引数が無効です。");
 
     return new Promise((resolve, reject) => {
       let title = pageOptions.title;
       let description = pageOptions.description;
       let pagefunction = pageOptions.function || undefined;
-
-      let push = { title: title, description: description };
+      let fields = pageOptions.fields;
+      let color = pageOptions.color;
+      let thumbnail = pageOptions.thumbnail;
+      let push = {
+        title: title,
+        description: description,
+        fields: fields,
+        color: color,
+        thumbnail: thumbnail
+      };
       if (pagefunction) push.function = pagefunction;
 
       this.pages.push(push);
@@ -49,7 +63,6 @@ class pageMenu {
       resolve(this.pages);
     });
   }
-
   addPages(pages) {
     if (!pages) return new Error("addPageの引数が無効です。");
 
@@ -233,6 +246,17 @@ class pageMenu {
     if (!page.fields) page.fields = [];
 
     page.fields.push({
+      name: name,
+      value: value,
+      inline: inline
+    });
+  }
+
+  pages_addfield(name, value, inline = undefined, pages) {
+    if (inline == undefined) inline = false;
+    if (!pages.fields) pages.fields = [];
+
+    pages.fields.push({
       name: name,
       value: value,
       inline: inline

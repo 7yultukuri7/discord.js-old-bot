@@ -11,7 +11,9 @@
     "fs": "^0.0.2",
     "ecstar": "github:mouse484/Ecstar#master",
     "moji": "git+https://github.com/niwaringo/moji.git",
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "speedtest-net": "^1.5.1",
+    "better-sqlite3": "^5.4.2"
   },
   "devDependencies": {},
   "scripts": {
