@@ -87,8 +87,12 @@ module.exports = class extends command {
                         value: "このBotの概要を表示する",
                     },
                     {
-                        name: "eval",
-                        value: "bot開発者のみ実行可能",
+                        name: "debug",
+                        value: "このBotのCPUの状態(だけ)を表示する",
+                    },
+                    {
+                        name: "speedtest",
+                        value: "https://www.speedtest.net/",
                     }
                 ]
             },
@@ -103,9 +107,17 @@ module.exports = class extends command {
                 },
                 fields: [
                     {
-                        name: "none",
-                        value: "none",
+                        name: "levelup",
+                        value: "mee6とbot開発者のみ実行可能(レベルアップと役職を与える)",
                     },
+                    {
+                        name: "refresh",
+                        value: "bot開発者のみ実行可能(このBotの再起動)",
+                    },
+                    {
+                        name: "eval",
+                        value: "bot開発者のみ実行可能",
+                    }
                 ]
             },
 

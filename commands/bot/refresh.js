@@ -9,7 +9,7 @@ module.exports = class extends command {
     }
     run(message,client) {
         //実行する内容
-        if (!message.author.id == "352394784440320020") return;
+    if (message.author.id == "352394784440320020") {
 async.series([
   function(callback) {
     //処理1
@@ -26,5 +26,9 @@ async.series([
     return console.log('err[' + err + ']');
   }
 });
+}       else
+        {
+       message.reply("このコマンドはbot管理者のみ実行可能です。");
+        }
     }
 };

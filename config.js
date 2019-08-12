@@ -4,7 +4,7 @@ const datacpu = os.cpus();
 module.exports = {
   token  : process.env.DISCORD_BOT_TOKEN,
   prefix : "io!",
-  var    : "1.0.0 +plus",
+  var    : "1.1.0 +plus",
   cpu1: {
     model: datacpu[0].model,
     speed: datacpu[0].speed,

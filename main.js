@@ -51,7 +51,6 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
    if(message.content.startsWith("io!levelup")) {
       const tx = args.join(' ');
-      if (message.author.id == "352394784440320020") {
         var embedabout = new discord.RichEmbed()
            .setAuthor("レベルアップ！")
            .setDescription(args[1]+" さん、レベル `"+args[0]+"` に上がっています！！！")
@@ -69,12 +68,21 @@ client.on("message", async message => {
             ; break    
           case "10": 
             memberid.addRole("543616146922799115").catch(console.error);
+            ; break     
+          case "15": 
+            memberid.addRole("543616134331629568").catch(console.error);
+            ; break     
+          case "20": 
+            memberid.addRole("543616132813422628").catch(console.error);
+            ; break     
+          case "25": 
+            memberid.addRole("543616131299147778").catch(console.error);
             ; break    
 }
         message.delete(10000)
       }
-  }
-}});
+}
+});
 //{player}さんは、レベル ``{level}`` に上がっています！ 
 client.on('guildMemberAdd', async member => {
 if (member.guild.id === '543615084618842132'){
