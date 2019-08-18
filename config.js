@@ -3,8 +3,16 @@ const os = require( 'os' );
 const datacpu = os.cpus();
 module.exports = {
   token  : process.env.DISCORD_BOT_TOKEN,
-  prefix : "io!",
-  var    : "1.1.0 +plus",
+  server: {
+    iogame: {
+      prefix : "io!",
+      var    : "1.1.0 +plus io",
+    },
+    zatsukomu: {
+      prefix : "za!",
+      var    : "1.1.0 +plus zatsukomu",
+    },
+  },
   cpu1: {
     model: datacpu[0].model,
     speed: datacpu[0].speed,

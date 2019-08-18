@@ -2,8 +2,8 @@ const { command } = require("ecstar");
 const async = require('async');
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame,clientzatukomu) {
+        super(clientiogame || clientzatukomu,  {
             name: "refresh",
         });
     }

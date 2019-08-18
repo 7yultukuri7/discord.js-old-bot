@@ -3,13 +3,14 @@ const pageMenu = require('/app/system/pagemenu');
 const config = require("/app/config");
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame) {
+        super(clientiogame, {
             name: ["help"],
         });
     }
 
     run(message) {
+if (message.guild.id === '543615084618842132'){
         const description1 = message.guild.name+"のコマンドのプレフィックスは`"+config.prefix+"`です。";
         const client = this.client;
         let pMenu = new pageMenu(message,
@@ -25,7 +26,7 @@ module.exports = class extends command {
                 fields: [
                     {
                         name: "プレフィクス・コマンドについて",
-                        value: "このサーバーのコマンドのプレフィックスは`"+config.prefix+"`です。\nhelpに載ってある全てのコマンドは`io!`で使用出来ます。\nサーバーによって、`プレフィクス`, `コマンド` が異なります。\n**\n**",
+                        value: "このサーバーのコマンドのプレフィックスは`"+config.server.iogame.prefix+"`です。\nhelpに載ってある全てのコマンドは`"+config.server.iogame.prefix+"`で使用出来ます。\nサーバーによって、`プレフィクス`, `コマンド` が異なります。\n**\n**",
                     },
                     {
                         name: "⏮",
@@ -247,4 +248,5 @@ module.exports = class extends command {
         ]);
         pMenu.run();
     }
+}
 };

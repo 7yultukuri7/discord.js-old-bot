@@ -7,8 +7,8 @@ const moment = require("moment-timezone");
 const discord = require("discord.js");
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame,clientzatukomu) {
+        super(clientiogame || clientzatukomu,  {
             name: "eval",
             args: {
               tx: "text"

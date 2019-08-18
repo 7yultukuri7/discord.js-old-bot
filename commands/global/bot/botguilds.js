@@ -3,8 +3,8 @@ const moment = require("moment-timezone");
 const pageMenu = require('/app/system/pagemenu');
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame,clientzatukomu) {
+        super(clientiogame || clientzatukomu,  {
             name: "botguilds",
         });
     }

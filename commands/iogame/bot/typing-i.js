@@ -2,12 +2,13 @@ const { command } = require("ecstar");
 const async = require('async');
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame) {
+        super(clientiogame, {
             name: "typing",
         });
     }
     run(message) {
+if (message.guild.id === '543615084618842132'){
 async.series([
   function(callback) {
     //処理1
@@ -27,5 +28,6 @@ async.series([
   }
 });
     }
+}
 };
 

@@ -4,6 +4,7 @@ const moment = require("moment-timezone");
 const async = require('async');
 
 module.exports = async (client, member) => {
+if (member.guild.id === '543615084618842132'){
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
 	let fontSize = 70;
@@ -83,4 +84,5 @@ async.series([
     return console.log('err[' + err + ']');
   }
 });
+};
 };

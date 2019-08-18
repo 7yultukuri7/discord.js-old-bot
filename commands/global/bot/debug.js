@@ -3,8 +3,8 @@ const os = require( 'os' );
 const config = require("/app/config");
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame,clientzatukomu) {
+        super(clientiogame || clientzatukomu,  {
             name: "debug",
         });
     }

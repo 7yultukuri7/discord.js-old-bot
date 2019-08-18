@@ -1,8 +1,8 @@
 const { command } = require("ecstar");
 
 module.exports = class extends command {
-    constructor(client) {
-        super(client, {
+    constructor(clientiogame,clientzatukomu) {
+        super(clientiogame || clientzatukomu,  {
             name: "memory",
         });
     }

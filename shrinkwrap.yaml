@@ -2,7 +2,7 @@ dependencies:
   async: 3.1.0
   canvas: 2.6.0
   discord.js: 11.5.1
-  dotenv: 8.0.0
+  dotenv: 8.1.0
   ecstar: github.com/mouse484/Ecstar/4f26bb1c106268e6db50e079d81d48d9595514e1
   fs: 0.0.2
   moji: github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49
@@ -288,12 +288,12 @@ packages:
       sodium: ^2.0.3
     resolution:
       integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
-  /dotenv/8.0.0:
+  /dotenv/8.1.0:
     dev: false
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-30xVGqjLjiUOArT4+M5q9sYdvuR4riM6yK9wMcas9Vbp6zZa+ocC9dp6QoftuhTPhFAiLK/0C5Ni2nou/Bk8lg==
+      integrity: sha512-GUE3gqcDCaMltj2++g6bRQ5rBJWtkWTmqmD0fo1RnnMuUqHNCt2oTPeDnS9n6fKYvlhn7AeBkb38lymBtWBQdA==
   /draftlog/1.0.12:
     dev: false
     resolution:
@@ -1278,7 +1278,7 @@ specifiers:
   async: ^3.1.0
   canvas: ^2.6.0
   discord.js: ^11.5.1
-  dotenv: ^8.0.0
+  dotenv: ^8.1.0
   ecstar: 'github:mouse484/Ecstar#master'
   fs: ^0.0.2
   moji: 'git+https://github.com/niwaringo/moji.git'
