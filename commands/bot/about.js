@@ -1,9 +1,10 @@
 const { Command } = require("discord.js-commando");
+const { RichEmbed, discord } = require('discord.js');
 
-const package_file = require("../../package.json");
-const info_channel = require("../../config/main.js").guild.main.channel.info;
 
-module.exports = class bot_info_command extends Command {
+const config = require("/app/config/main.js");
+
+module.exports = class extends Command {
     constructor(client) {
         super(client, {
             name: "about",
@@ -11,14 +12,15 @@ module.exports = class bot_info_command extends Command {
             group: "bot",
             memberName: "about",
             description: "このbotの情報を表示します",
+            guildOnly: true,
         });
     }
 
     run(message) {
-        var embedabout = new discord.RichEmbed()
-           .setAuthor("概要")
-           .setDescription("このBotの概要を表示しています。")
-          .addField("❯ バージョン","`var."+config.server.iogame.var+"`")
+      const embed = new RichEmbed()
+          .setAuthor("概要")
+          .setDescription("このBotの概要を表示しています。")
+          .addField("❯ バージョン","`var."+config.var+"`")
           .addField("❯ 更新情報","`var.1.0.0 +plus global` ドキュメントビューアを追加しました。\n(Dev: ドキュメントビューア, ecstar, dotenv のライブラリを追加。comaandを分割して、管理しやすいよう変更。)\n"+
                    "`var.1.1.0 +plus global` botguilds, speedtest, levelup, webshotを追加しました。\n(Dev: webshot, speedtest-net のライブラリを追加。)")
           .addField("❯ 製作者","7yultukuri7(id: 352394784440320020)")
@@ -32,10 +34,10 @@ module.exports = class bot_info_command extends Command {
                     `<:Online:608614124758368256>: ${message.guild.members.filter(member => member.presence.status === 'online').size} <:Idle:608614090738499594>: ${message.guild.members.filter(member => member.presence.status === 'idle').size} <:dnd:608614113513439252>: ${message.guild.members.filter(member => member.presence.status === 'dnd').size} <:Offline:608614103099113483>: ${message.guild.members.filter(member => member.presence.status === 'offline').size}`)
           .addField("❯ Botの導入",`非公開`)
           .addField("❯ サポートサーバー",`未作成\n** **\n** **\n** **\n** **`)
-          .addField("❯ Tips","`"+config.server.iogame.prefix+"help` でヘルプを表示できます。")
+          .addField("❯ Tips","`"+config.prefix+"help` でヘルプを表示できます。")
           .setColor("#63c6e1")
           .setFooter(message.guild.name, message.guild.iconURL)
           .setTimestamp()
-      message.channel.send(embedabout);
-    }
+        return message.say(embed);
+  }
 };

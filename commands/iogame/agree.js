@@ -10,6 +10,7 @@ module.exports = class agree_command extends Command {
             group: "iogame",
             memberName: "agree",
             guildOnly: true,
+            ownerOnly: true,
             description:
                 ".ioゲームサーバーが提示するルール等に同意する際のコマンド。",
         });

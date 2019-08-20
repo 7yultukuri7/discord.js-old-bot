@@ -4,11 +4,11 @@ const { CommandoClient } = require("discord.js-commando");
 
 const client_module = require("./client/import.js");
 
-const config = require("./config/main.js");
+const config = require("/app/config/main.js");
 
 const client = new CommandoClient({
     commandPrefix: config.prefix,
-    owner: config.owner.id,
+    owner: [config.owner.id],
     invite: config.guild.main.url,
     unknownCommandResponse: false,
 });
@@ -31,9 +31,9 @@ client.once("ready", () => {
     bot_on = true;
 });
 
-client.on("guildMemberAdd", member =>
-    client_module.guild.member.add(client, member)
-);
+//client.on("guildMemberAdd", member =>
+//    client_module.guild.member.add(client, member)
+//);
 
 // botの問題系
 client.on("error", error =>

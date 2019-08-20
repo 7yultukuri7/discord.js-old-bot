@@ -8,6 +8,7 @@ module.exports = class user_info extends Command {
             group: "bot",
             memberName: "userinfo",
             description: "ユーザーの情報を表示します",
+            guildOnly: true,
             args: [
                 {
                     key: "user",

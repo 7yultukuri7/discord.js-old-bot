@@ -2,7 +2,7 @@
   "name": "7yultukuri7-discord.js-bot",
   "version": "1.2.0 +plus",
   "main": "index.js",
-  "repository": "https://github.com/Escgroup/Esc-bot.git",
+  "repository": "https://github.com/7yultukuri7/discord.js-io-bot-server.git",
   "author": "7yultukuri7",
   "license": "MIT",
   "scripts": {
@@ -15,7 +15,14 @@
     "discord.js": "^11.5.1",
     "discord.js-commando": "github:mouse484/Commando#japanese-djs-v11",
     "sequelize": "^6.0.0",
-    "sqlite3": "^4.1.0"
+    "sqlite3": "^4.1.0",
+    "async": "^3.1.0",
+    "canvas": "^2.6.0",
+    "fs": "^0.0.2",
+    "moment-timezone": "^0.5.26",
+    "moji": "git+https://github.com/niwaringo/moji.git",
+    "speedtest-net": "^1.5.1",
+    "webshot": "^0.18.0"
   },
   "devDependencies": {
     "dotenv": "^7.0.0",

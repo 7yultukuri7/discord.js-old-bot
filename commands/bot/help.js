@@ -18,6 +18,7 @@ module.exports = class HelpCommand extends Command {
             aliases: ["commands"],
             memberName: "help",
             description: "helpを表示します",
+            guildOnly: true,
             args: [
                 {
                     key: "command",
@@ -197,7 +198,7 @@ module.exports = class HelpCommand extends Command {
 
             message
                 .say(
-                    "<a:loading:482420749668188170> | ヘルプを　DM に送信します"
+                    "<:loading:482420749668188170> | ヘルプを　DM に送信します"
                 )
                 .then(edit_message =>
                     message.author

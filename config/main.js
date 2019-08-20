@@ -1,8 +1,15 @@
+const { CommandoClient } = require("discord.js-commando");
+const client = new CommandoClient();
 module.exports = {
-    token: process.env.TOKEN,
-    prefix: process.env.BOT_PREFIX,
-    owner: {
-        id: "352394784440320020",
+    token  : process.env.TOKEN,
+    prefix : process.env.BOT_PREFIX,
+    var    : "1.2.0 +plus (beta)",
+    owner  : {
+        id   : "352394784440320020",
+    },
+    bot    : {
+        name : "580339102331699209",
+        id   : "580339102331699209",
     },
     guild: {
         main: {

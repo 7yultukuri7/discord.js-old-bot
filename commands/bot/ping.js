@@ -7,6 +7,7 @@ module.exports = class PingCommand extends Command {
             group: "bot",
             memberName: "ping",
             description: "Pingを表示します",
+            guildOnly: true,
         });
     }
 
