@@ -22,7 +22,8 @@ module.exports = class extends Command {
           .setDescription("このBotの概要を表示しています。")
           .addField("❯ バージョン","`var."+config.var+"`")
           .addField("❯ 更新情報","`var.1.0.0 +plus global` ドキュメントビューアを追加しました。\n(Dev: ドキュメントビューア, ecstar, dotenv のライブラリを追加。comaandを分割して、管理しやすいよう変更。)\n"+
-                   "`var.1.1.0 +plus global` botguilds, speedtest, levelup, webshotを追加しました。\n(Dev: webshot, speedtest-net のライブラリを追加。)")
+                   "`var.1.1.0 +plus global` botguilds, speedtest, levelup, webshotを追加しました。\n(Dev: webshot, speedtest-net のライブラリを追加。)\n"+
+                   "`var.1.2.0 +plus global` roleinfo, serverinfo, userinfoを追加しました。\n(Dev: cheerio-httpcli, sequelize, sqlite3 のライブラリを追加。 ecstar → discord.js-commando に移行)")
           .addField("❯ 製作者","7yultukuri7(id: 352394784440320020)")
           .addField("❯ メインライブラリ","`javascript`, `node.js`, `discord.js`, `ecstar`")
           .addField("❯ サブライブラリ","`async`, `canvas`, `dotenv`, `fs`, `http`, `moji`, `moment-timezone`, `webshot`, `speedtest-net`")

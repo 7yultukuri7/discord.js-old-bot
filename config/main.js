@@ -1,8 +1,10 @@
 const { CommandoClient } = require("discord.js-commando");
 const client = new CommandoClient();
+const os = require( 'os' );
+const datacpu = os.cpus();
 module.exports = {
     token  : process.env.TOKEN,
-    prefix : process.env.BOT_PREFIX,
+    prefix : "io!",
     var    : "1.2.0 +plus (beta)",
     owner  : {
         id   : "352394784440320020",
@@ -30,4 +32,28 @@ module.exports = {
         debug: "612627290047774740",
         disconnect: "612627309974781955",
     },
+  cpu1: {
+    model: datacpu[0].model,
+    speed: datacpu[0].speed,
+    nice : datacpu[0].times.nice,
+    sys  : datacpu[0].times.sys,
+    idle : datacpu[0].times.idle,
+    irq  : datacpu[0].times.irq,
+  },
+  cpu2: {
+    model: datacpu[1].model,
+    speed: datacpu[1].speed,
+    nice : datacpu[1].times.nice,
+    sys  : datacpu[1].times.sys,
+    idle : datacpu[1].times.idle,
+    irq  : datacpu[1].times.irq,
+  },
+  cpu3: {
+    model: datacpu[2].model,
+    speed: datacpu[2].speed,
+    nice : datacpu[2].times.nice,
+    sys  : datacpu[2].times.sys,
+    idle : datacpu[2].times.idle,
+    irq  : datacpu[2].times.irq,
+  },
 };

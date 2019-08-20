@@ -17,10 +17,7 @@ client.registry
     .registerGroups([
         ["bot", "通常のbotコマンド"],
         ["iogame", ".ioゲームサーバーコマンド"],
-        ["conv", "便利コマンド"],
-        ["admin", "サーバー管理者コマンド"],
-        ["staff", "スタッフ専用コマンド"],
-        ["dev", "開発者コマンド"],
+        ["dev", "デバロッパーコマンド"],
     ])
     .registerDefaultTypes()
     .registerCommandsIn(`${__dirname}/commands/`);

@@ -7,7 +7,7 @@ module.exports = class server_ping_command extends Command {
             aliases: ["sinfo", "サーバー情報"],
             group: "bot",
             memberName: "serverinfo",
-            description: "サーバーの情報を表示します",
+            description: "サーバーの情報を表示します。",
             guildOnly: true,
         });
     }

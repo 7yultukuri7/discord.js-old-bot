@@ -1,0 +1,23 @@
+const { Command } = require("discord.js-commando");
+const { RichEmbed, discord } = require('discord.js');
+
+
+const config = require("/app/config/main.js");
+
+module.exports = class extends Command {
+    constructor(client) {
+        super(client, {
+            name: "None",
+            aliases: ["None", "none"],
+            group: "bot",
+            memberName: "None",
+            description: "None",
+            guildOnly: true,
+        });
+    }
+
+    run(message) {
+
+        return
+  }
+};

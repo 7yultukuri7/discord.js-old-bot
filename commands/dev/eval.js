@@ -6,7 +6,7 @@ module.exports = class EvalCommand extends Command {
             name: "eval",
             group: "dev",
             memberName: "eval",
-            description: "evalを実行します",
+            description: "evalを実行します。",
             ownerOnly: true,
             args: [
                 {
