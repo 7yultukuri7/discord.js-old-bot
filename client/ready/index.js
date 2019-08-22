@@ -4,6 +4,6 @@ module.exports = (client, config) => {
     client.channels
         .get(config.channel_id.startup_log)
         .send("起動しました", { embed: { timestamp: new Date() } });
-    client.user.setActivity(`${c.prefix}help | var. ${c.ver}`);
+    client.user.setActivity(`${c.prefix}help | ver. ${c.ver}`);
     return;
 };

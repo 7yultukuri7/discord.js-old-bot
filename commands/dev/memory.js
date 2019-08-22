@@ -1,7 +1,5 @@
 const { Command } = require("discord.js-commando");
 const { RichEmbed, discord } = require('discord.js');
-
-
 const config = require("/app/config/main.js");
 
 module.exports = class extends Command {

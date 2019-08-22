@@ -1,4 +1,5 @@
 const { Command } = require("discord.js-commando");
+const config = require("/app/config/main.js");
 
 const inline = args => {
     return `\`${args}\``;
@@ -148,7 +149,7 @@ module.exports = class HelpCommand extends Command {
                         icon_url: this.client.user.avatarURL,
                     },
                     title:
-                        "サーバー管理 by 7yultukuri7",
+                        config.ver,
                     description: `
                     ${help_content.prefix}
 
@@ -182,7 +183,7 @@ module.exports = class HelpCommand extends Command {
                         command.isUsable(message)
                     )).map(command =>
                         `${inline(command.name)} : ${command.description} ${
-                            command.guildOnly ? "※サーバー限定" : ""} ${
+                            command.guildOnly ? "※サーバーのみ" : ""} ${
                             command.nsfw ? "※NSFW" : ""}
                             `).join("")
                 }`;
@@ -198,14 +199,14 @@ module.exports = class HelpCommand extends Command {
 
             message
                 .say(
-                    "<:loading:482420749668188170> | ヘルプを　DM に送信します"
+                    "<:loading:482420749668188170> | ヘルプを送信します"
                 )
                 .then(edit_message =>
-                    message.author
+                    message.channel
                         .send(help_list)
                         .then(() => {
                             edit_message.edit(
-                                ":envelope_with_arrow: | ヘルプを DM に送信しました"
+                                ":envelope_with_arrow: | ヘルプを送信しました"
                             );
                         })
                         .catch(() => {

@@ -5,7 +5,7 @@ const datacpu = os.cpus();
 module.exports = {
     token  : process.env.TOKEN,
     prefix : "io!",
-    var    : "1.2.0 +plus (beta)",
+    ver    : "1.2.0 +plus",
     owner  : {
         id   : "352394784440320020",
     },
@@ -16,7 +16,7 @@ module.exports = {
     guild: {
         main: {
             id: "573350684372762624",
-            url: "https://discord.gg/6EhyV5u",
+            url: "https://discord.gg/sq237Nf",
             channel: {
                 readme: "560404647999963137",
             },
