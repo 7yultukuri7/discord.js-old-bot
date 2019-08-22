@@ -1,23 +1,23 @@
-const { command } = require("ecstar");
+const { Command } = require("discord.js-commando");
+const { RichEmbed, discord } = require('discord.js');
 
-module.exports = class extends command {
+
+const config = require("/app/config/main.js");
+
+module.exports = class extends Command {
     constructor(client) {
         super(client, {
-            name: "コマンド名",
+            name: "None",
+            aliases: ["None", "none"],
+            group: "bot",
+            memberName: "None",
+            description: "None",
+            guildOnly: true,
         });
     }
-    run(message) {
-        //実行する内容
-    }
-};
 
-Guildleft
-var prefix = 'za!';
-  var args = message.content.slice(prefix.length).trim().split(/ +/g);
-  var command = args.shift().toLowerCase();
-  if(command === 'left'){
-  if (args.length  < 1) return message.reply("You must supply a Guild ID");
- if (message.author.id !== "352394784440320020") return message.reply("No permission to use this command");
-client.guilds.get(args.join(" ")).leave()
-.then(g => console.log(`Left the guild ${g}`)) .catch(console.error);
-}
+    run(message) {
+
+        return
+  }
+};
