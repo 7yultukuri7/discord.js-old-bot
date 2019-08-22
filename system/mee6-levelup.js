@@ -1,5 +1,5 @@
 const discord = require('discord.js');
-const config = require("/app/config/main.js");
+const config = require("/app/config");
 
 module.exports = (client, message) => {
 if (message.guild.id === '543615084618842132'){
