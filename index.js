@@ -27,6 +27,7 @@ client.registry
 client.on("message", async message => {
     require("./system/mee6-levelup")(client, message);
   if (message.author.bot) return;
+    require("./system/ticket")(client, message);
     require("./system/channel-counter")(client, message);
   if (message.author.id == "352394784440320020") {
   	if (message.content === 'io!remove-remove-543615084618842132') {
@@ -36,6 +37,24 @@ client.on("message", async message => {
 	  	client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
 	  }
   } 
+});
+
+const responseObject = {
+    "Quick Response 1": "Reply 1",
+    "Quick Response 2": "Reply 2",
+    "Quick Response 3": "Reply 3",
+    "Quick Response 4": "Reply 4",
+    "Quick Response 5": "Reply 5",
+    "Quick Response 6": "Reply 6",
+    "Quick Response 7": "Reply 7",
+    "Quick Response 8": "Reply 8",
+    "Quick Response 9": "Reply 9",
+    "Quick Response 10": "Reply 10"
+};
+client.on("message", (message) => {
+    if (responseObject[message.content]) {
+        message.channel.send(responseObject[message.content]);
+    }
 });
 
 //{player}さんは、レベル ``{level}`` に上がっています！ 

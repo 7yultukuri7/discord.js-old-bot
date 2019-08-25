@@ -35,6 +35,21 @@ if (message.guild.id === '543615084618842132'){
           case "25": 
             memberid.addRole("543616131299147778").catch(console.error);
             ; break    
+          case "30": 
+            memberid.addRole("543616128354877441").catch(console.error);
+            ; break    
+          case "35": 
+            memberid.addRole("543618423108927530").catch(console.error);
+            ; break    
+          case "40": 
+            memberid.addRole("543618416657825795").catch(console.error);
+            ; break    
+          case "45": 
+            memberid.addRole("543618414065877002").catch(console.error);
+            ; break    
+          case "50": 
+            memberid.addRole("543618418662834177").catch(console.error);
+            ; break    
 }
         message.delete(10000)
       }

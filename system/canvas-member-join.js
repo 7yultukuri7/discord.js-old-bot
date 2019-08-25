@@ -16,7 +16,7 @@ const applyText = (canvas, text) => {
 	return ctx.font;
 };
 
-	const channel = member.guild.channels.find(ch => ch.name === '📥ようこそ！・welcome');
+	const channel = member.guild.channels.find(ch => ch.name === 'ようこそ！📥・welcome');
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
