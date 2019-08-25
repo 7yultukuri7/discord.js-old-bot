@@ -3,7 +3,7 @@ dependencies:
   canvas: 2.6.0
   cheerio-httpcli: 0.7.4
   discord.js: 11.5.1
-  discord.js-commando: github.com/mouse484/Commando/286909c4a39fb084f5e2643125b8287e9fee28e9
+  discord.js-commando: github.com/7yultukuri7/Commando-Japanese/96f90dc00775c48e4988b2b907e8a5c426a45422
   fs: 0.0.2
   moji: github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49
   moment-timezone: 0.5.26
@@ -2265,7 +2265,7 @@ packages:
     optional: true
     resolution:
       integrity: sha1-lSj0QtqxsihOWLQ3m7GU4i4MQAU=
-  github.com/mouse484/Commando/286909c4a39fb084f5e2643125b8287e9fee28e9:
+  github.com/7yultukuri7/Commando-Japanese/96f90dc00775c48e4988b2b907e8a5c426a45422:
     dependencies:
       common-tags: 1.8.0
       escape-string-regexp: 1.0.5
@@ -2278,12 +2278,13 @@ packages:
       discord.js: ^11.2.0
       sqlite: ^2.0.0
     resolution:
-      tarball: 'https://codeload.github.com/mouse484/Commando/tar.gz/286909c4a39fb084f5e2643125b8287e9fee28e9'
+      tarball: 'https://codeload.github.com/7yultukuri7/Commando-Japanese/tar.gz/96f90dc00775c48e4988b2b907e8a5c426a45422'
     version: 0.10.0
   github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49:
     dev: false
     name: moji
     resolution:
+      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/niwaringo/moji/tar.gz/a1511d1776e460007a41d57d147739fc56dd7b49'
     version: 1.2.0
 registry: 'https://registry.npmjs.org/'
@@ -2294,7 +2295,7 @@ specifiers:
   canvas: ^2.6.0
   cheerio-httpcli: ^0.7.4
   discord.js: ^11.5.1
-  discord.js-commando: 'github:mouse484/Commando#japanese-djs-v11'
+  discord.js-commando: 'github:7yultukuri7/Commando-Japanese#djs-v11'
   dotenv: ^7.0.0
   eslint: ^5.15.2
   eslint-plugin-node: ^9.0.1

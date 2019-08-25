@@ -21,6 +21,7 @@ client.registry
     .registerDefaultTypes()
     .registerCommandsIn(`${__dirname}/commands/`);
 
+
 //--------------------------------------------
 //discord.js
 client.on("message", async message => {
@@ -39,17 +40,18 @@ client.on("message", async message => {
 
 //{player}さんは、レベル ``{level}`` に上がっています！ 
 client.on('guildMemberAdd', async member => {
-  require("./system/canvas-member-join")(client, member);
+  require("./system/canvas-member-join.js")(client, member);
 });
 
 client.on('guildMemberRemove', async member => {
-  require("./system/canvas-member-remove")(client, member);
+  require("./system/canvas-member-remove.js")(client, member);
 });
 
 
 
 
 
+/*
 bot_on = false;
 client.once("ready", () => {
     client_module.ready.index(client, config);
@@ -76,5 +78,5 @@ client.on("disconnect", event =>
 client.on("reconnecting", () =>
     client_module.connect.reconnecting(client, config.channel_id, bot_on)
 );
-
+*/
 client.login(config.token);

@@ -13,7 +13,7 @@
   "dependencies": {
     "cheerio-httpcli": "^0.7.4",
     "discord.js": "^11.5.1",
-    "discord.js-commando": "github:mouse484/Commando#japanese-djs-v11",
+    "discord.js-commando": "github:7yultukuri7/Commando-Japanese#djs-v11",
     "sequelize": "^6.0.0",
     "sqlite3": "^4.1.0",
     "async": "^3.1.0",

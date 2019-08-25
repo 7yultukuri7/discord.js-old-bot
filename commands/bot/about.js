@@ -24,12 +24,10 @@ module.exports = class extends Command {
         });
     }
 
-    run(message,args) {
-        const showAll = args.update && args.update.toLowerCase() === "all";
-
-        if (args.update) {
+    run(message, {update}) {
+        if ( update.parser === "update" ) {
       const embed = new RichEmbed()
-          .setAuthor("概要")
+          .setAuthor("概要a")
           .setDescription("このBotの概要を表示しています。")
           .addField("❯ バージョン","`ver."+config.ver+"`")
           .addField("❯ 更新情報","`ver.1.0.0 +plus global` ドキュメントビューアを追加しました。\n(Dev: ドキュメントビューア, ecstar, dotenv のライブラリを追加。comaandを分割して、管理しやすいよう変更。)\n"+
@@ -61,7 +59,7 @@ module.exports = class extends Command {
                    "`ver.1.2.0 +plus global` roleinfo, serverinfo, userinfoを追加しました。\n(Dev: cheerio-httpcli, sequelize, sqlite3 のライブラリを追加。 ecstar → discord.js-commando に移行)")
           .addField("❯ 製作者","7yultukuri7(id: 352394784440320020)")
           .addField("❯ メインライブラリ","`javascript`, `node.js`, `discord.js`, `discord.js-commando`")
-          .addField("❯ サブライブラリ","`async`, `canvas`, `dotenv`, `fs`, `http`, `moji`, `moment-timezone`, `webshot`, `speedtest-net`, `cheerio-httpcli`, `sequelize`, `sqlite3`")
+          .addField("❯ サブライブラリ","`async`, `canvas`, `dotenv`, `fs`, `http`, `moji`, `moment-timezone`, `webshot`, `speedtest-net`, `cheerio-httpcli`, `sequelize`, `sqlite3`, 合計273個のライブラリー依存関係")
           .addField("❯ オリジナルライブラリ","`ドキュメントビューア`, `キャンバス-参加・退出`, `カウントシステム`")
           .addField("❯ Discordサーバー数",`${message.client.guilds.size}`,true)
           .addField("❯ 全サーバーチャンネル数",`${message.client.channels.size}`,true)
