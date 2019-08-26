@@ -26,11 +26,12 @@ module.exports = class extends Command {
 
     run(message, {url}) {
 (async () => {
+  // const browser = await puppeteer.launch({ defaultViewport: null, headless: false, slowMo: 300 });
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('https://example.com');
-  await page.screenshot({path: 'example.png'});
- 
+  await page.goto('https://google.com');
+  await page.screenshot({path: 'out.png', fullPage: true});
+
   await browser.close();
 })();
         return
