@@ -5,7 +5,7 @@ const datacpu = os.cpus();
 module.exports = {
     token  : process.env.TOKEN,
     prefix : "nya!",
-    ver    : "1.2.0 +plus",
+    ver    : "1.3.0 +plus",
     owner  : {
         id   : "352394784440320020",
     },

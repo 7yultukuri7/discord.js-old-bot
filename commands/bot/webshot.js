@@ -1,6 +1,6 @@
 const { Command } = require("discord.js-commando");
 const { RichEmbed, discord } = require('discord.js');
-const webshot = require('webshot');
+const puppeteer = require('puppeteer');
 
 
 const config = require("/app/config/main.js");
@@ -25,25 +25,41 @@ module.exports = class extends Command {
     }
 
     run(message, {url}) {
-    const options = {
-      screenSize: {
-        width: 1920,
-        height: 1080
-      },
-      shotSize: {
-        width: 1920,
-        height: 'all'
-      },
-      userAgent: 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
-    };
-    
-    const attachment = message.channel.send({
-      files: [{
-        attachment: webshot(url, options),
-        name: 'web.jpg'
-      }]
-    });
-    message.channel.send(`webshot`, attachment);
+(async () => {
+  //ブラウザを定義(headless:false ブラウザを表示する, true 表示しない)
+  const browser = await puppeteer.launch({ headless: false });
+  //タブを定義
+  const page = await browser.newPage();
+  //ブラウザのサイズを定義
+  await page.setViewport({width: 1240, height:1080});
+
+  //待機
+  async function sleep(delay) {
+    return new Promise(resolve => setTimeout(resolve, delay));
+  }
+
+  // Googleにアクセス
+  await page.goto('https://www.google.co.jp/');
+  // 検索窓に「ラクス　エンジニアブログ」と入力
+  await page.type('.gLFyf', 'ラクス　エンジニアブログ');
+  //スクリーンショット撮影
+  await page.screenshot({path: 'google.png'});
+  // 検索ボタンクリック
+  //待機時間を設けないと止まってしまうことがあるので記述
+  await sleep(5000);
+  await page.focus('input[name="btnK"]');
+  await page.click('input[name="btnK"]');
+  //待機時間を設けないと止まってしまうことがあるので記述
+  await sleep(5000);
+  //スクリーンショット撮影
+  await page.screenshot({path: 'search_result.png'});
+  // 検索結果の先頭リンクをクリック
+  await page.click('.rc > .r > a');
+  //スクリーンショット撮影
+  await page.screenshot({path: 'blog.png'});
+  //ブラウザを閉じる
+  await browser.close();
+})();
         return
   }
 };

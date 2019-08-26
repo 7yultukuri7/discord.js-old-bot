@@ -165,45 +165,10 @@ class pageMenu {
                 this.currentPage = 0;
                 break;
               case this.emojis[1]:
-                if (this.currentPage != 0 ) {
-                if (this.currentPage != 1 ) {
-                if (this.currentPage != 2 ) {
-                if (this.currentPage != 3 ) {
-                if (this.currentPage != 4 ) {
-                  this.currentPage -= 5;
-                }
-                }
-                }
-                }
-                }
+                  this.currentPage = 1;
                 break;
               case this.emojis[2]:
-                if (this.currentPage != 0) {
-                  this.currentPage -= 1;
-                }
-                break;
-              case this.emojis[4]:
-                if (this.currentPage != Object.keys(this.pages).length - 1) {
-                  this.currentPage += 1;
-                }
-                break;
-              case this.emojis[5]:
-                if (this.currentPage != Object.keys(this.pages).length - 5 ) {
-                if (this.currentPage != Object.keys(this.pages).length - 4 ) {
-                if (this.currentPage != Object.keys(this.pages).length - 3 ) {
-                if (this.currentPage != Object.keys(this.pages).length - 2 ) {
-                if (this.currentPage != Object.keys(this.pages).length - 1 ) {
-                if (this.currentPage != Object.keys(this.pages).length - 0 ) {
-                this.currentPage += 5;
-                }
-                }
-                }
-                }
-                }
-                };
-                break;
-              case this.emojis[6]:
-                this.currentPage = Object.keys(this.pages).length - 1;
+                  this.currentPage = 2;
                 break;
               case this.emojis[3]:
                 collector.stop();
@@ -281,7 +246,7 @@ class pageMenu {
     this.pages = pages;
     this.duration = options.duration || 60000;
     this.currentPage = 0;
-    this.emojis = options.emojis || ["⏮", "⏪", "◀", "⏹", "▶", "⏩", "⏭"];
+    this.emojis = options.emojis || ["📕", "🔷", "🔶", "⏹"];
     this.waitingText = options.waitingText || "ドキュメントビューア読み込み中…";
     this.waitingColor = options.waitingColor != undefined || 0;
     this.expireFunction =
