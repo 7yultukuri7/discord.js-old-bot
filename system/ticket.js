@@ -1,17 +1,17 @@
 const { RichEmbed, discord, client } = require("discord.js");
-const prefix = "!fc ";
+const prefixfc = "!fc ";
 
 module.exports = async (client, message) => {
 if (message.guild.id === '543615084618842132'){
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
+const args = message.content.slice(prefixfc.length).trim().split(/ +/g);
+const commandfc = args.shift().toLowerCase();
   
-    if (command === 'help') {
+if (message.channel.id === '565893617760337935') { 
+    if (commandfc === 'help') {
         message.channel.send("**フリーカテゴリー**\n\n**編集用チャンネルで実行可能なコマンド <#565893617760337935>**\n``!fc create <voice|text> [チャンネル名]`` チャンネルを作成します。");
     }
-
-    if (message.channel.id === '565893617760337935') {  
-    if (command === 'create') {
+ 
+    if (commandfc === 'create') {
       if (args[0] === 'text') {
         if (!message.guild.roles.exists("name", "＊フリーカテゴリー")) return message.channel.send(`:warning: このサーバーには \`＊フリーカテゴリー\` 役職が作成されていないため、チャンネルが作成できません。`);
         if (message.guild.channels.exists("name", args[1])) return message.channel.send(`:warning: すでにチャンネルが作成されています。`);

@@ -66,10 +66,6 @@ client.on('guildMemberRemove', async member => {
   require("./system/canvas-member-remove.js")(client, member);
 });
 
-
-
-
-
 /*
 bot_on = false;
 client.once("ready", () => {

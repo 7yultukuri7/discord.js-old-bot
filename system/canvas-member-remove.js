@@ -39,7 +39,7 @@ const applyText = (canvas, text) => {
   Canvas.registerFont("03_Smart_Font_UI.ttf", {family: "allfonts"});
   ctx.font = '28px allfonts';
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${member.guild.name}が退出しました。`, canvas.width / 2.5, canvas.height / 3.5);
+	ctx.fillText(`${member.guild.name}から退出しました。`, canvas.width / 2.5, canvas.height / 3.5);
 
 	ctx.font = applyText(canvas, `${member.displayName}!`);
 	ctx.fillStyle = '#ffffff';

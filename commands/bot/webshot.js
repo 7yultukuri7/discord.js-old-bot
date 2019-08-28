@@ -1,11 +1,11 @@
 const { Command } = require("discord.js-commando");
 const { RichEmbed, discord } = require('discord.js');
-const puppeteer = require('puppeteer');
+const webshot = require('webshot');
 
 
-const config = require("/app/config/main.js");
+ const config = require("/app/config/main.js");
 
-module.exports = class extends Command {
+ module.exports = class extends Command {
     constructor(client) {
         super(client, {
             name: "webshot",
@@ -24,16 +24,26 @@ module.exports = class extends Command {
         });
     }
 
-    run(message, {url}) {
-(async () => {
-  // const browser = await puppeteer.launch({ defaultViewport: null, headless: false, slowMo: 300 });
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('https://google.com');
-  await page.screenshot({path: 'out.png', fullPage: true});
+     run(message, {url}) {
+    const options = {
+      screenSize: {
+        width: 1920,
+        height: 1080
+      },
+      shotSize: {
+        width: 1920,
+        height: 'all'
+      },
+      userAgent: 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
+    };
 
-  await browser.close();
-})();
+     const attachment = message.channel.send({
+      files: [{
+        attachment: webshot(url, options),
+        name: 'web.jpg'
+      }]
+    });
+    message.channel.send(`webshot`, attachment);
         return
   }
 };
