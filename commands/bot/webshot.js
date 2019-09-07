@@ -26,6 +26,7 @@ const webshot = require('webshot');
 
      run(message, {url}) {
     const options = {
+      renderDelay: 10,
       screenSize: {
         width: 1920,
         height: 1080
@@ -34,7 +35,8 @@ const webshot = require('webshot');
         width: 1920,
         height: 'all'
       },
-      userAgent: 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
+      userAgent: 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+      defaultWhiteBackground: true
     };
 
      const attachment = message.channel.send({
