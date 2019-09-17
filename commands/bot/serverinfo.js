@@ -17,19 +17,19 @@ module.exports = class server_ping_command extends Command {
 
         const user_count = () => {
             let bot_count = 0;
-            let Esc_member_count = 0;
-            const role_Esc = message.guild.roles.find(
-                role => role.name === "[Esc] member"
-            );
+//            let Esc_member_count = 0;
+//            const role_Esc = message.guild.roles.find(
+//                role => role.name === "[Esc] member"
+//            );
             message.guild.members.forEach(member => {
                 if (member.user.bot) {
                     bot_count += 1;
                 }
-                if (member.roles.has(role_Esc.id)) {
-                    Esc_member_count += 1;
-                }
+//                if (member.roles.has(role_Esc.id)) {
+//                    Esc_member_count += 1;
+//                }
             });
-            return `${server.members.size} (bot: ${bot_count} / [Esc]member: ${Esc_member_count})`;
+            return `${server.members.size} (bot: ${bot_count})`;// / [Esc]member: ${Esc_member_count})
         };
 
         const channel_count = () => {

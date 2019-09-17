@@ -8,14 +8,13 @@ const config = require("/app/config/main.js");
 const client = new CommandoClient({
     commandPrefix: config.prefix,
     owner: [config.owner.id],
-    invite: config.guild.main.url,
     unknownCommandResponse: false,
 });
 
 client.registry
     .registerGroups([
         ["bot", "通常のbotコマンド"],
-        ["iogame", ".ioゲームサーバーコマンド"],
+        ["wiki", "Mediawikiベースのコマンド"],
         ["dev", "デバロッパーコマンド"],
     ])
     .registerDefaultTypes()

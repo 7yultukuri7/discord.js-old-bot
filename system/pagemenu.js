@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const { Client } = require('discord.js');
+const client = new Discord.Client();
 
 class pageMenu {
   getEmbed(page) {
@@ -205,6 +207,20 @@ class pageMenu {
               case this.emojis[6]:
                 this.currentPage = Object.keys(this.pages).length - 1;
                 break;
+              case this.emojis[7]:
+                message.say("この指定ページへ移動する機能は、作成中です。");
+                if (this.currentPage < 0) {
+                if (Object.keys(this.pages).length > 0) {
+                  
+                }
+                }
+              client.on("message", (message) => {
+                  if (message.author.bot) return;
+                if (message.content === '1') {
+                  this.currentPage += 1;
+                }
+              });
+                break;
               case this.emojis[3]:
                 collector.stop();
                 return this;
@@ -281,7 +297,7 @@ class pageMenu {
     this.pages = pages;
     this.duration = options.duration || 60000;
     this.currentPage = 0;
-    this.emojis = options.emojis || ["⏮", "⏪", "◀", "⏹", "▶", "⏩", "⏭"];
+    this.emojis = options.emojis || ["⏮", "⏪", "◀", "⏹", "▶", "⏩", "⏭", "#⃣"];
     this.waitingText = options.waitingText || "ドキュメントビューア読み込み中…";
     this.waitingColor = options.waitingColor != undefined || 0;
     this.expireFunction =

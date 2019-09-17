@@ -162,7 +162,7 @@ module.exports = class HelpCommand extends Command {
                         icon_url:
                             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Info_Simple.svg/800px-Info_Simple.svg.png",
                         text:
-                            "質問、意見、問題報告 等は .ioゲームサーバー の 💻リクエスト・request で受付ています。",
+                            "質問、意見、問題報告 等は 7yultukuri7 (userid:352394784440320020) のDM で受付ています。",
                     },
                     color: 0xf5a623,
                 },

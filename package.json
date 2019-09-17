@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "11.x"
+  },
   "name": "7yultukuri7-discord.js-bot",
   "version": "1.2.0",
   "main": "index.js",
@@ -22,7 +25,8 @@
     "moment-timezone": "^0.5.26",
     "moji": "git+https://github.com/niwaringo/moji.git",
     "speedtest-net": "^1.5.1",
-    "webshot": "^0.18.0"
+    "webshot": "^0.18.0",
+    "wikijs": "^6.0.0"
   },
   "devDependencies": {
     "dotenv": "^7.0.0",
