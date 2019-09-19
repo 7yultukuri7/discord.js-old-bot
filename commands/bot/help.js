@@ -164,7 +164,7 @@ module.exports = class HelpCommand extends Command {
                         text:
                             "質問、意見、問題報告 等は 7yultukuri7 (userid:352394784440320020) のDM で受付ています。",
                     },
-                    color: 0xf5a623,
+                    color: Math.floor(Math.random() * 16777214) + 1,
                 },
                 split: true,
             };
@@ -176,19 +176,19 @@ module.exports = class HelpCommand extends Command {
 
                 const list_cmd = `${
                     (showAll ? group.commands : group.commands.filter(command =>
-                        command.isUsable(message)
+                        command.isUsable(message) 
                     )).map(command =>
                         `${inline(command.name)} : ${command.description} ${
-                            command.guildOnly ? "※サーバーのみ" : ""} ${
+                            command.guildOnly ? "" : ""} ${
                             command.ownerOnly ? "※BOT開発者のみ" : ""} ${
                             command.nsfw ? "※NSFW" : ""}
                             `).join("")
                 }`;
-
+console.log(group.commands);
 
 
                 help_list.embed.fields.push({
-                    name: `**${group.id}** (${group.name})`,
+                    name: `❯ **${group.id}** (${group.name})`,
                     value: list_cmd || "None",
                     inline:true,
                 });

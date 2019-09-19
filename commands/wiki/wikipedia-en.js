@@ -1,7 +1,7 @@
 const { Command } = require("discord.js-commando");
 const { RichEmbed, discord } = require('discord.js');
 const wiki = require("wikijs").default({
-  apiUrl : 'http://ja.wikipedia.org/w/api.php'
+  apiUrl : 'http://wikipedia.org/w/api.php'
 });
 
  const config = require("/app/config/main.js");
@@ -9,16 +9,16 @@ const wiki = require("wikijs").default({
  module.exports = class extends Command {
     constructor(client) {
         super(client, {
-            name: "wikipedia-ja",
-            aliases: ["wikipedia-ja_jp"],
+            name: "wikipedia-en",
+            aliases: ["wikipedia-en-us"],
             group: "wiki",
-            memberName: "wikipedia-ja",
-            description: "[Wikipedia(日本語)](http://ja.wikipedia.org)で検索(完全一致)をします。",
+            memberName: "wikipedia-en",
+            description: "[Wikipedia(英語)](http://wikipedia.org)で検索(完全一致)をします。",
             guildOnly: true,
             args: [
                 {
                     key: "search",
-                    prompt: "Wikipedia(日本語)で実行したい検索(完全一致)を入力してください",
+                    prompt: "Wikipedia(英語)で実行したい検索(完全一致)を入力してください",
                     type: "string",
                 },
             ],
@@ -48,7 +48,7 @@ const wiki = require("wikijs").default({
                 fields: [
                     {
                         name: "links",
-                        value: 'http://ja.wikipedia.org/wiki/'+search,
+                        value: 'http://wikipedia.org/wiki/'+search,
                     },
                 ],
             },

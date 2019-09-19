@@ -14,7 +14,7 @@ const client = new CommandoClient({
 client.registry
     .registerGroups([
         ["bot", "通常のbotコマンド"],
-        ["wiki", "Mediawikiベースのコマンド"],
+        ["wiki", "MediawikiベースのWikiのためのコマンド"],
         ["dev", "デバロッパーコマンド"],
     ])
     .registerDefaultTypes()

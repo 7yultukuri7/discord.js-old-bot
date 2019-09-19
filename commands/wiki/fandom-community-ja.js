@@ -1,7 +1,7 @@
 const { Command } = require("discord.js-commando");
 const { RichEmbed, discord } = require('discord.js');
 const wiki = require("wikijs").default({
-  apiUrl : 'http://ja.wikipedia.org/w/api.php'
+  apiUrl : 'http://community.fandom.com/ja/api.php'
 });
 
  const config = require("/app/config/main.js");
@@ -9,16 +9,16 @@ const wiki = require("wikijs").default({
  module.exports = class extends Command {
     constructor(client) {
         super(client, {
-            name: "wikipedia-ja",
-            aliases: ["wikipedia-ja_jp"],
+            name: "fandom-community-ja",
+            aliases: ["fandom-community-ja-jp"],
             group: "wiki",
-            memberName: "wikipedia-ja",
-            description: "[Wikipedia(日本語)](http://ja.wikipedia.org)で検索(完全一致)をします。",
+            memberName: "fandom-community-ja",
+            description: "Fandomの[コミュニティセントラル(日本語)](https://community.fandom.com/ja) で検索(完全一致)をします。",
             guildOnly: true,
             args: [
                 {
                     key: "search",
-                    prompt: "Wikipedia(日本語)で実行したい検索(完全一致)を入力してください",
+                    prompt: "Fandomのコミュニティセントラル(日本語)で実行したい検索(完全一致)を入力してください",
                     type: "string",
                 },
             ],
@@ -35,7 +35,7 @@ const wiki = require("wikijs").default({
          message.channel.send({
             embed: {
                 color: 2500351,
-                title: `${search}の検索結果(Wikipedia)`,
+                title: `${search}の検索結果(Fandomのコミュニティセントラル(日本語)`,
                 description: summary,
                 timestamp: new Date(),
                 footer: {
@@ -48,7 +48,7 @@ const wiki = require("wikijs").default({
                 fields: [
                     {
                         name: "links",
-                        value: 'http://ja.wikipedia.org/wiki/'+search,
+                        value: 'http://community.fandom.com/ja/wiki/'+search,
                     },
                 ],
             },
