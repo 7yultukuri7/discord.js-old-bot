@@ -101,6 +101,6 @@ if (message.channel.id === '565893617760337935') {
         }).catch(console.error); // Send errors to console
       }
     }
-}
-}
-}
+};
+};
+};

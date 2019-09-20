@@ -1,5 +1,10 @@
-    
 const { Command } = require("discord.js-commando");
+const Canvas = require('canvas');
+const moment = require("moment-timezone");
+const async = require('async');
+const { RichEmbed, discord } = require('discord.js');
+const config = require("/app/config/main.js");
+const os = require( 'os' );
 
 module.exports = class EvalCommand extends Command {
     constructor(client) {

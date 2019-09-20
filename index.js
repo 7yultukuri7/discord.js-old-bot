@@ -1,6 +1,6 @@
 require('./web1.js');
 const { CommandoClient } = require("discord.js-commando");
-
+const os = require( 'os' );
 const client_module = require("./client/import.js");
 
 const config = require("/app/config/main.js");
@@ -22,12 +22,54 @@ client.registry
 
 
 //--------------------------------------------
+//test
+function calcCPU(){
+  var cpus = os.cpus();
+  var total_all = 0;
+  var total_idle = 0;
+  
+  for(var i = 0, len = cpus.length; i < len; i++) {
+    console.log("CPU %s:", i);
+    var cpu = cpus[i], total = 0;
+    
+    for(var type in cpu.times) {
+        total += cpu.times[type];
+    }
+
+    for(type in cpu.times) {
+        console.log("\t", type, Math.round(100 * cpu.times[type] / total));
+    }
+    
+    total_all += total;
+    total_idle += cpu.times.idle;
+  }
+
+  console.log("total idle:",  Math.round(100 * total_idle / total_all));
+}
+function calcMemory(){
+  var memory = {};
+  memory.free = os.freemem();
+  memory.total = os.totalmem();
+  memory.freepercent = memory.free / memory.total * 100;
+  console.log("Free Mem:" + memory.free + ", Total Mem:" + memory.total + ", Free(%):" + memory.freepercent);
+}
+
+//--------------------------------------------
+
+//--------------------------------------------
 //discord.js
+client.on('ready', async message =>
+{ 
+	console.log('bot is ready!');
+  client.user.setActivity(`nya!`)
+});
 client.on("message", async message => {
+  if (message.channel.type == 'dm') return;
     require("./system/mee6-levelup")(client, message);
   if (message.author.bot) return;
     require("./system/ticket")(client, message);
     require("./system/channel-counter")(client, message);
+    require("./system/enter-ad-block")(client, message);
   if (message.author.id == "352394784440320020") {
   	if (message.content === 'io!remove-remove-543615084618842132') {
   		client.emit('guildMemberRemove', message.member || await message.guild.fetchMember(message.author));
