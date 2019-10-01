@@ -26,7 +26,8 @@
     "moji": "git+https://github.com/niwaringo/moji.git",
     "speedtest-net": "^1.5.1",
     "webshot": "^0.18.0",
-    "wikijs": "^6.0.0"
+    "wikijs": "^6.0.0",
+    "puppeteer": "^1.16.0"
   },
   "devDependencies": {
     "dotenv": "^7.0.0",
