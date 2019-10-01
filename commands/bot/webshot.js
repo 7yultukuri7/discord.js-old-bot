@@ -1,6 +1,5 @@
 const { Command } = require("discord.js-commando");
 const discord = require('discord.js');
-const webshot = require('webshot');
 const puppeteer = require('puppeteer');
 const path = require('path');
 const moment = require("moment-timezone");
@@ -28,32 +27,9 @@ const moment = require("moment-timezone");
     }
 
      run(message, {url}) {
-/*(async () => {
-  const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-//    executablePath: path.resolve('/user/bin/chromium-browser'),
-    headless: false
-  });
-  var page = await browser.newPage();
-  				page.on("error", error => {
-					message.channel.send(`:warning: ${error.message}`);
-				});
-  await page.setViewport({with: 1920, hight: 1080});
-  await page.goto(url);
-  var screenshot = await page.screenshot({type: 'png'});
-  await browser.close();
-     const attachment = message.channel.send({
-      files: [{
-        attachment: screenshot,
-        name: 'web.jpg'
-      }]
-    });
-    message.channel.send(`webshot`, attachment);
-})();*/
 const grabPage = async () => {
   const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 	const page = await browser.newPage()
 	await page.goto(url)
