@@ -1,4 +1,5 @@
 require('./web1.js');
+process.on('unhandledRejection', console.dir);
 const { CommandoClient } = require("discord.js-commando");
 const os = require( 'os' );
 const client_module = require("./client/import.js");
@@ -60,6 +61,26 @@ function calcMemory(){
 //discord.js
 client.on('ready', async message =>
 { 
+  const guild = client.guilds.get("543615084618842132")
+  let ccount = ""
+  const cjson  = []
+  //*
+  guild.channels.forEach(channel  =>{
+  if(channel.type === "category"){
+    ccount++
+    cjson.push(channel)
+  }
+  })//*/
+  for (  var i = 0;  i < ccount ;  i++  ) {
+    cjson.forEach( function( value ) {
+ if(value.position=== i){console.log(value.name)}
+    
+});
+//console.log(cjson.position[i])
+    
+ // 繰り返し処理
+//
+}//console.log(cjson )
 	console.log('bot is ready!');
   client.user.setActivity(`nya!`)
 });

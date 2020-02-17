@@ -184,7 +184,6 @@ module.exports = class HelpCommand extends Command {
                             command.nsfw ? "※NSFW" : ""}
                             `).join("")
                 }`;
-console.log(group.commands);
 
 
                 help_list.embed.fields.push({

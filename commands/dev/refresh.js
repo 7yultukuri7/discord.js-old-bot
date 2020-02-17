@@ -23,7 +23,7 @@ async.series([
     setTimeout(callback, 3000);
   }, function(callback) {
     //処理2
-        process.exit();
+        process.exit(1);
     //…
   }
 ], function(err, results) {

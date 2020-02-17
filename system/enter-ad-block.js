@@ -9,7 +9,7 @@ module.exports = (client, message) => {
   if (message.channel.type == 'dm') return;
 if (message.guild.id === '543615084618842132'){
 if (message.channel.id === '573682521229885451'){
-if (9 <= counter(message.content,"\n")){
+if (15 <= counter(message.content,"\n")){
         var embedada = {
 	color: Math.floor(Math.random() * 16777214) + 1,
 	author: {
@@ -24,7 +24,7 @@ if (9 <= counter(message.content,"\n")){
 		},
 		{
 			name: "このチャンネル(#"+message.channel.name + ')が改行できる回数',
-			value: '1~10',
+			value: '1~15',
 			inline: true,
 		},
 	],
@@ -39,7 +39,7 @@ if (9 <= counter(message.content,"\n")){
                     let chid = sent.channel.id;
 const momentmsg = moment(message.createdAt).tz("Asia/Tokyo").format("HH:mm:ss");
                   sent.delete(15000)
-                    client.channels.get("610706001980817418").send("`["+ momentmsg +"]` `[--]` :warning: **"+message.author.tag+"** (ID:"+message.author.id+")\n`[ Reason ]` <#"+message.channel.id+">のチャンネルで、改行回数制限 1~10");
+                    client.channels.get("610706001980817418").send("`["+ momentmsg +"]` `[--]` :warning: **"+message.author.tag+"** (ID:"+message.author.id+")\n`[ Reason ]` <#"+message.channel.id+">のチャンネルで、改行回数制限 1~15");
                     });
 };
 };

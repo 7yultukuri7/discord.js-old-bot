@@ -1,15 +1,15 @@
 dependencies:
   async: 3.1.0
-  canvas: 2.6.0
+  canvas: 2.6.1
   cheerio-httpcli: 0.7.4
   discord.js: 11.5.1
   discord.js-commando: github.com/7yultukuri7/Commando-Japanese/96f90dc00775c48e4988b2b907e8a5c426a45422
   fs: 0.0.2
   moji: github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49
   moment-timezone: 0.5.26
-  puppeteer: 1.20.0
+  puppeteer: 2.0.0
   sequelize: 6.0.0
-  speedtest-net: 1.5.1
+  speedtest-net: 1.6.0
   sqlite3: 4.1.0
   webshot: 0.18.0
   wikijs: 6.0.0
@@ -216,17 +216,17 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
-  /canvas/2.6.0:
+  /canvas/2.6.1:
     dependencies:
       nan: 2.14.0
       node-pre-gyp: 0.11.0
-      simple-get: 3.0.3
+      simple-get: 3.1.0
     dev: false
     engines:
       node: '>=6'
     requiresBuild: true
     resolution:
-      integrity: sha512-bEO9f1ThmbknLPxCa8Es7obPlN9W3stB1bo7njlhOFKIdUTldeTqXCh9YclCPAi2pSQs84XA0jq/QEZXSzgyMw==
+      integrity: sha512-S98rKsPcuhfTcYbtF53UIJhcbgIAK533d1kJKMwsMwAIFgfd58MOyxRud3kktlzWiEkFliaJtvyZCBtud/XVEA==
   /caseless/0.12.0:
     dev: false
     resolution:
@@ -362,7 +362,7 @@ packages:
     dependencies:
       buffer-from: 1.1.1
       inherits: 2.0.4
-      readable-stream: 2.3.6
+      readable-stream: 2.3.7
       typedarray: 0.0.6
     dev: false
     engines:
@@ -445,14 +445,14 @@ packages:
       ms: 2.1.2
     resolution:
       integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
-  /decompress-response/3.3.0:
+  /decompress-response/4.2.1:
     dependencies:
-      mimic-response: 1.0.1
+      mimic-response: 2.0.0
     dev: false
     engines:
-      node: '>=4'
+      node: '>=8'
     resolution:
-      integrity: sha1-gKTdMjdIOEv6JICDYirt7Jgq3/M=
+      integrity: sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==
   /deep-extend/0.6.0:
     dev: false
     engines:
@@ -917,8 +917,20 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
+    dev: true
     resolution:
       integrity: sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==
+  /glob/7.1.6:
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.0.4
+      once: 1.4.0
+      path-is-absolute: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   /globals/11.12.0:
     dev: true
     engines:
@@ -1008,7 +1020,7 @@ packages:
       npm: '>=1.3.7'
     resolution:
       integrity: sha1-muzZJRFHcvPZW2WmCruPfBj7rOE=
-  /https-proxy-agent/2.2.2:
+  /https-proxy-agent/3.0.1:
     dependencies:
       agent-base: 4.3.0
       debug: 3.2.6
@@ -1016,7 +1028,7 @@ packages:
     engines:
       node: '>= 4.5.0'
     resolution:
-      integrity: sha512-c8Ndjc9Bkpfx/vCJueCPy0jlP4ccCCSNDp8xwCZzPjKJUm+B+u9WX2x98Qx4n1PiMNTWo3D7KK5ifNV/yJyRzg==
+      integrity: sha512-+ML2Rbh6DAuee7d07tYGEKOEi2voWPUGan+ExdPbPW6Z3svq+JCqr0v8WmKPOkz1vOVykPCBSuobe7G8GJUtVg==
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -1345,12 +1357,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
-  /mimic-response/1.0.1:
+  /mimic-response/2.0.0:
     dev: false
     engines:
-      node: '>=4'
+      node: '>=8'
     resolution:
-      integrity: sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
+      integrity: sha512-8ilDoEapqA4uQ3TwS0jakGONKXVJqpy+RpM+3b7pLdOjghCrEiGp9SRkFbUHAmZW9vdnrENWHjaweIoTIJExSQ==
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.11
@@ -1720,11 +1732,11 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  /puppeteer/1.20.0:
+  /puppeteer/2.0.0:
     dependencies:
       debug: 4.1.1
       extract-zip: 1.6.7
-      https-proxy-agent: 2.2.2
+      https-proxy-agent: 3.0.1
       mime: 2.4.4
       progress: 2.0.3
       proxy-from-env: 1.0.0
@@ -1732,10 +1744,10 @@ packages:
       ws: 6.2.1
     dev: false
     engines:
-      node: '>=6.4.0'
+      node: '>=8.16.0'
     requiresBuild: true
     resolution:
-      integrity: sha512-bt48RDBy2eIwZPrkgbcwHtb51mj2nKvHOPMaSH2IsWiv7lOG9k9zhaRzpDZafrk05ajMc3cu+lSQYYOfH2DkVQ==
+      integrity: sha512-t3MmTWzQxPRP71teU6l0jX47PHXlc4Z52sQv4LJQSZLq1ttkKS2yGM3gaI57uQwZkNaoGd0+HPPMELZkcyhlqA==
   /qs/6.5.2:
     dev: false
     engines:
@@ -1764,6 +1776,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
+  /readable-stream/2.3.7:
+    dependencies:
+      core-util-is: 1.0.2
+      inherits: 2.0.4
+      isarray: 1.0.0
+      process-nextick-args: 2.0.1
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+    dev: false
+    resolution:
+      integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==
   /readable-stream/3.4.0:
     dependencies:
       inherits: 2.0.4
@@ -1853,7 +1877,7 @@ packages:
       integrity: sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
   /rimraf/2.7.1:
     dependencies:
-      glob: 7.1.4
+      glob: 7.1.6
     dev: false
     hasBin: true
     resolution:
@@ -1954,14 +1978,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-c0TLuLbib7J9ZrL8hvn21Zl1IcY=
-  /simple-get/3.0.3:
+  /simple-get/3.1.0:
     dependencies:
-      decompress-response: 3.3.0
+      decompress-response: 4.2.1
       once: 1.4.0
       simple-concat: 1.0.0
     dev: false
     resolution:
-      integrity: sha512-Wvre/Jq5vgoz31Z9stYWPLn0PqRqmBDpFSdypAnHu5AvRVCYPRYGnvryNLiXu8GOBNDH82J2FRHUGMjjHUpXFw==
+      integrity: sha512-bCR6cP+aTdScaQCnQKbPKtJOKDp/hj9EDLJo3Nw4y1QksqaovlW/bnptB6/c1e+qmNIDHRK+oXFDdEqBT8WzUA==
   /slice-ansi/2.1.0:
     dependencies:
       ansi-styles: 3.2.1
@@ -1981,17 +2005,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-AGXIhH/XZVinFewojYTsG8uapHX2e7MjtFbmibvK9qqG4qGd9b6jelU1sTkCA0RVGHvN9exJYTBVbF1Ls2f69g==
-  /speedtest-net/1.5.1:
+  /speedtest-net/1.6.0:
     dependencies:
       chalk: 2.4.2
       draftlog: 1.0.12
       http-proxy-agent: 2.1.0
-      https-proxy-agent: 2.2.2
-      xml2js: 0.4.19
+      https-proxy-agent: 3.0.1
+      xml2js: 0.4.23
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-az10ue3vkUUt49p5ommRO5eKXB5GfzyLehWCNRUnO686GjtdXJcSJFPnluc93UdoWTtWbr4fCVeH9Kka1OpHIA==
+      integrity: sha512-uxeA4BGApj3Ghb6VQtcsem0ZoeyQGwLDzL6WP3hJiegS9GBIvpPKDeTzY5/K2/CMoZcihrVYIW3yIABQb2LMOg==
   /sprintf-js/1.0.3:
     dev: true
     resolution:
@@ -2302,19 +2326,21 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
-  /xml2js/0.4.19:
+  /xml2js/0.4.23:
     dependencies:
       sax: 1.2.4
-      xmlbuilder: 9.0.7
+      xmlbuilder: 11.0.1
     dev: false
+    engines:
+      node: '>=4.0.0'
     resolution:
-      integrity: sha512-esZnJZJOiJR9wWKMyuvSE1y6Dq5LCuJanqhxslH2bxM6duahNZ+HMpCLhBQGZkbX6xRf8x1Y2eJlgt2q3qo49Q==
-  /xmlbuilder/9.0.7:
+      integrity: sha512-ySPiMjM0+pLDftHgXY4By0uswI3SPKLDw/i3UXbnO8M/p28zqexCUoPmQFrYD+/1BzhGJSs2i1ERWKJAtiLrug==
+  /xmlbuilder/11.0.1:
     dev: false
     engines:
       node: '>=4.0'
     resolution:
-      integrity: sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=
+      integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==
   /yallist/3.0.3:
     dev: false
     resolution:
@@ -2353,7 +2379,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   async: ^3.1.0
-  canvas: ^2.6.0
+  canvas: ^2.6.1
   cheerio-httpcli: ^0.7.4
   discord.js: ^11.5.1
   discord.js-commando: 'github:7yultukuri7/Commando-Japanese#djs-v11'
@@ -2364,9 +2390,9 @@ specifiers:
   moji: 'git+https://github.com/niwaringo/moji.git'
   moment-timezone: ^0.5.26
   prettier: ^1.16.4
-  puppeteer: ^1.16.0
+  puppeteer: ^2.0.0
   sequelize: ^6.0.0
-  speedtest-net: ^1.5.1
+  speedtest-net: ^1.6.0
   sqlite3: ^4.1.0
   webshot: ^0.18.0
   wikijs: ^6.0.0

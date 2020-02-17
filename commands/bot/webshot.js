@@ -31,15 +31,22 @@ const grabPage = async () => {
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 	const page = await browser.newPage()
-	await page.goto(url)
+  await page.setViewport({
+  width: 1366,
+  height: 768,
+  deviceScaleFactor: 1,
+});
+	await page.goto(url, { waitUntil: 'domcontentloaded' })
+
 /*	const el = await page.$('#contents')
 	const buffer = await el.screenshot({ path: `${Date.now()}.png` })*/
-	const buffer = await page.screenshot({ path: `${Date.now()}.png` })
+	const buffer = await page.screenshot({ path: `${Date.now()}.png` , fullPage:true})
 
 	await browser.close()
 	return buffer
 }
 (async () => {
+message.channel.send('ウェブショットが完了するまでしばらくお待ちください。')  
 		console.log('message matches, fetching')
 		// We can create embeds using the MessageEmbed constructor
 		// Read more about all that you can do with the constructor
@@ -51,7 +58,7 @@ const grabPage = async () => {
 			// Set the color of the embed
 			.setColor(0xff0000)
 			// Set the main content of the embed
-			.setDescription('...')
+			.setDescription(url)
 			.attachFile(buffer)
 		console.log('message sent')
 		// Send the embed to the same channel as the message
