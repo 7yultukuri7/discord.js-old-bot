@@ -18,7 +18,7 @@ module.exports = class extends Command {
     run(message) {
             function checkBots(guild) {
                 let botCount = 0
-                guild.members.forEach(member => {
+                guild.members.cache.forEach(member => {
                     if(member.user.bot) botCount++
                 })
              return botCount
@@ -26,7 +26,7 @@ module.exports = class extends Command {
 
             const checkMembers = guild => {
                 let memberCount = 0;
-                guild.members.forEach(member => {
+                guild.members.cache.forEach(member => {
                    if (!member.user.bot) memberCount++;
                 });
              return memberCount;

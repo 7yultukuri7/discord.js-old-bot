@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "11.x"
+    "node": "12.x"
   },
   "name": "7yultukuri7-discord.js-bot",
   "version": "1.2.0",
@@ -15,19 +15,18 @@
   },
   "dependencies": {
     "cheerio-httpcli": "^0.7.4",
-    "discord.js": "^11.5.1",
-    "discord.js-commando": "github:7yultukuri7/Commando-Japanese#djs-v11",
-    "sequelize": "^6.0.0",
-    "sqlite3": "^4.1.0",
-    "async": "^3.1.0",
+    "discord.js": "^12.0.1",
+    "discord.js-commando": "^0.10.0",
+    "sqlite3": "^4.1.1",
+    "async": "^3.2.0",
     "canvas": "^2.6.1",
     "fs": "^0.0.2",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.27",
     "moji": "git+https://github.com/niwaringo/moji.git",
-    "speedtest-net": "^1.6.0",
+    "speedtest-net": "^2.1.0",
     "webshot": "^0.18.0",
     "wikijs": "^6.0.0",
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^2.1.0"
   },
   "devDependencies": {
     "dotenv": "^7.0.0",

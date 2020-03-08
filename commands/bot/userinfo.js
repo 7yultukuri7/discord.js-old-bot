@@ -22,7 +22,7 @@ module.exports = class user_info extends Command {
 
     run(message, { user }) {
         const user_info = user_id => {
-            const user = this.client.users.get(user_id);
+            const user = this.client.users.cache.get(user_id);
             return {
                 embed: {
                     author: {
