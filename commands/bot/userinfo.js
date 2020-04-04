@@ -26,10 +26,10 @@ module.exports = class user_info extends Command {
             return {
                 embed: {
                     author: {
-                        icon_url: user.avatarURL,
+                        icon_url: user.avatarURL(),
                         name: `${user.username}の情報`,
                     },
-                    thumbnail: { url: user.avatarURL },
+                    thumbnail: { url: user.avatarURL() },
                     fields: [
                         { name: "ユーザー名", value: user.tag, inline: true },
                         { name: "ID", value: user.id, inline: true },

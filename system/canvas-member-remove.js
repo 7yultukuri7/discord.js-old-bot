@@ -4,7 +4,7 @@ const moment = require("moment-timezone");
 const async = require('async');
 
 module.exports = async (client, member) => {
-if (member.guild.id === '543615084618842132'){
+if (member.guild.id === '543615084618842132' || member.guild.id == '573350684372762624'){
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
 	let fontSize = 70;
@@ -16,7 +16,7 @@ const applyText = (canvas, text) => {
 	return ctx.font;
 };
 
-	const channel = member.guild.channels.find(ch => ch.name === 'ようこそ！📥・welcome');
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'ようこそ！📥・welcome');
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
@@ -25,7 +25,7 @@ const applyText = (canvas, text) => {
 	const background = await Canvas.loadImage("https://cdn.glitch.com/7771849c-5333-4ddb-99f1-f943ab602551%2Fimage.png?v=1565160783957");
 	ctx.drawImage(background, 0, 0, 700, canvas.height);
 /*
-	const background1 = await Canvas.loadImage(member.guild.iconURL);
+	const background1 = await Canvas.loadImage(member.guild.iconURL());
 	ctx.drawImage(background1, 250, 0, canvas.width - 250, 500);
 	const background2 = await Canvas.loadImage("http://flat-icon-design.com/f/f_business_58/s256_f_business_58_1bg.jpg");
 	ctx.drawImage(background2, 225, 0, 250, 250);
@@ -61,10 +61,10 @@ const createdAt =  moment(member.user.createdAt).tz("Asia/Tokyo").format("YYYY/M
 	ctx.closePath();
 	ctx.clip();
 
-	const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
+	const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png', dynamic: false, size: 512  }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
 
-	const attachment = new discord.Attachment(canvas.toBuffer(), `userid-${member.id}--serverid--${member.guild.id}-see-you-image.png`);
+	const attachment = new discord.MessageAttachment(canvas.toBuffer(), `userid-${member.id}--serverid--${member.guild.id}-see-you-image.png`);
 
 	channel.send(`${member.displayName}が退出しました。`, attachment);
 async.series([
@@ -75,12 +75,12 @@ async.series([
     setTimeout(callback, 1000);
   }, function(callback) {
     //処理2
-                const embed1 = new discord.RichEmbed()
+                const embed1 = new discord.MessageEmbed()
                     .setAuthor("退出...")
                     .setDescription(
                     `${member.displayName}さんが退出しました。ご利用ありがとうございました。`)
                     .setColor("#FF7525")
-                    .setFooter(member.guild.name, member.guild.iconURL)
+                    .setFooter(member.guild.name, member.guild.iconURL())
                     .setTimestamp()
                     	channel.send(embed1);
     //…

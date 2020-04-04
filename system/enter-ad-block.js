@@ -1,4 +1,4 @@
-const { Client, RichEmbed, discord } = require('discord.js');
+const { Client, discord } = require('discord.js');
 const moment = require("moment-timezone");
 const counter = function(str,seq){
     return str.split(seq).length - 1;
@@ -14,7 +14,7 @@ if (15 <= counter(message.content,"\n")){
 	color: Math.floor(Math.random() * 16777214) + 1,
 	author: {
 		name: message.author.username + " (id: " + message.author.id + ")",
-		icon_url: message.author.avatarURL,
+		icon_url: message.author.avatarURL(),
 	},
 	description: '送信したメッセージは、5秒後削除されます。\nこの注意メッセージは、15秒後削除されます。',
 	fields: [

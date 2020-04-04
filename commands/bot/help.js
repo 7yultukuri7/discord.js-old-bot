@@ -16,7 +16,7 @@ module.exports = class HelpCommand extends Command {
         super(client, {
             name: "help",
             group: "bot",
-            aliases: ["commands"],
+            aliases: ["commands",""],
             memberName: "help",
             description: "helpを表示します",
             guildOnly: true,
@@ -147,16 +147,15 @@ module.exports = class HelpCommand extends Command {
                 embed: {
                     author: {
                         name: `${this.client.user.username} の使い方`,
-                        icon_url: this.client.user.avatarURL,
+                        icon_url: this.client.user.avatarURL(),
                     },
                     title:
                         config.ver,
                     description: `
                     ${help_content.prefix}
                     ${help_content.cmd}
-                    DM では、Prefix なしでも反応します
                     ${help_content.show}
-                    `,
+                    `,//DM では、Prefix なしでも反応します
                     fields: [],
                     footer: {
                         icon_url:

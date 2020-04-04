@@ -3,8 +3,8 @@ const Canvas = require('canvas');
 const moment = require("moment-timezone");
 const async = require('async');
 
-module.exports = async (client, member) => {
-if (member.guild.id === '543615084618842132'){
+module.exports = async (client, member) => {console.log("joincomad")
+if (member.guild.id === '543615084618842132' || member.guild.id == '573350684372762624'){console.log("!!!")
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
 	let fontSize = 70;
@@ -16,7 +16,7 @@ const applyText = (canvas, text) => {
 	return ctx.font;
 };
 
-	const channel = member.guild.channels.find(ch => ch.name === 'ようこそ！📥・welcome');
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'ようこそ！📥・welcome');
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
@@ -53,10 +53,10 @@ const createdAt =  moment(member.user.createdAt).tz("Asia/Tokyo").format("YYYY/M
 	ctx.closePath();
 	ctx.clip();
 
-	const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
+	const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png', dynamic: false, size: 512  }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
 
-	const attachment = new discord.Attachment(canvas.toBuffer(), `userid-${member.id}--serverid--${member.guild.id}-welcome-image.png`);
+	const attachment = new discord.MessageAttachment(canvas.toBuffer(), `userid-${member.id}--serverid--${member.guild.id}-welcome-image.png`);
 
 	channel.send(`${member.guild.name}へようこそ!, ${member}`, attachment);
 /*${member}*/
@@ -68,13 +68,13 @@ async.series([
     setTimeout(callback, 1000);
   }, function(callback) {
     //処理2
-                const embed1 = new discord.RichEmbed()
+                const embed1 = new discord.MessageEmbed()
                     .setAuthor(".io ゲームへ ようこそ！")
                     .setDescription(
                     "しかし、現状はほとんどのチャンネルが利用できないようになっています。\n"+
                     "<#560404647999963137> をよく読み、「アカウント登録」を済ませてからご参加ください。")
                     .setColor("#11FF00")
-                    .setFooter(member.guild.name, member.guild.iconURL)
+                    .setFooter(member.guild.name, member.guild.iconURL())
                     .setTimestamp()
                     	channel.send(embed1);
     //…

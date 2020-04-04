@@ -2,7 +2,7 @@ const { Command } = require("discord.js-commando");
 const Canvas = require('canvas');
 const moment = require("moment-timezone");
 const async = require('async');
-const { RichEmbed, discord } = require('discord.js');
+const { discord } = require('discord.js');
 const config = require("/app/config/main.js");
 const os = require( 'os' );
 
@@ -27,7 +27,7 @@ module.exports = class EvalCommand extends Command {
     run(message, { code }) {
         const client = this.client;
 
-        const eval_log_channel = client.channels.get("612639809542029315");
+        const eval_log_channel = client.channels.cache.get("612639809542029315");
 
         try {
             const evaled = eval(code);
@@ -35,7 +35,7 @@ module.exports = class EvalCommand extends Command {
             message.say(evaled);
 
             const embed = {
-                title: ":o:",
+                title: ":white_check_mark:",
                 color: 0x4a90e2,
                 fields: [
                     { name: "code", value: code },
@@ -46,7 +46,7 @@ module.exports = class EvalCommand extends Command {
 
             eval_log_channel.send({ embed });
         } catch (error) {
-            message.say(":x: | エラーが発生しました");
+            message.say(":octagonal_sign: | エラーが発生しました");
 
             const embed = {
                 title: ":x:",

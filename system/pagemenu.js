@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 class pageMenu {
   getEmbed(page) {
-    let embed = new Discord.RichEmbed()
+    let embed = new Discord.MessageEmbed()
       .setTitle(page.title)
       .setDescription(page.description)
       .setFooter(
@@ -136,9 +136,9 @@ class pageMenu {
 
       message.channel
         .send({
-          embed: new Discord.RichEmbed()
+          embed: new Discord.MessageEmbed()
             .setColor(this.waitingColor)
-            .setAuthor(`${message.author.tag} / ${message.author.id}`, message.author.avatarURL)
+            .setAuthor(`${message.author.tag} / ${message.author.id}`, message.author.avatarURL())
             .setDescription(this.waitingText)
             .setTimestamp()
         })
@@ -230,9 +230,8 @@ class pageMenu {
 
             page = this.pages[this.currentPage];
 
-            await m.reactions
-              .find(react => react.emoji.name == r.emoji.name)
-              .remove(message.author);
+            await m.reactions.cache
+              .find(react => react.emoji.name == r.emoji.name).users.remove(message.author.id);
             if (page.function) page.function();
 
             m.edit({ embed: this.getEmbed(page) });

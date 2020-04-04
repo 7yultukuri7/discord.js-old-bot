@@ -21,7 +21,7 @@ module.exports = class server_ping_command extends Command {
 //            const role_Esc = message.guild.roles.find(
 //                role => role.name === "[Esc] member"
 //            );
-            message.guild.members.forEach(member => {
+            message.guild.members.cache.forEach(member => {
                 if (member.user.bot) {
                     bot_count += 1;
                 }
@@ -29,14 +29,14 @@ module.exports = class server_ping_command extends Command {
 //                    Esc_member_count += 1;
 //                }
             });
-            return `${server.members.size} (bot: ${bot_count})`;// / [Esc]member: ${Esc_member_count})
+            return `${server.members.cache.size} (bot: ${bot_count})`;// / [Esc]member: ${Esc_member_count})
         };
 
         const channel_count = () => {
             let channel_text = 0;
             let channel_voice = 0;
             let channel_category = 0;
-            message.guild.channels.forEach(channel => {
+            message.guild.channels.cache.forEach(channel => {
                 if (channel.type === "text") {
                     channel_text += 1;
                 }
@@ -47,20 +47,20 @@ module.exports = class server_ping_command extends Command {
                     channel_category += 1;
                 }
             });
-            return `${message.guild.channels.size} (text: ${channel_text} / voice: ${channel_voice} / category: ${channel_category})`;
+            return `${message.guild.channels.cache.size} (text: ${channel_text} / voice: ${channel_voice} / category: ${channel_category})`;
         };
 
         const verify_level = () => {
             const verificationLevel = message.guild.verificationLevel;
-            if (verificationLevel === 0) {
+            if (verificationLevel == "NONE") {
                 return "設定しない : 無制限";
-            } else if (verificationLevel === 1) {
+            } else if (verificationLevel == "LOW") {
                 return "低 : メール認証がされているアカウントのみ";
-            } else if (verificationLevel === 2) {
+            } else if (verificationLevel == "MEDIUM") {
                 return "中 : Discordに登録してから5分以上経過したアカウントのみ";
-            } else if (verificationLevel === 3) {
+            } else if (verificationLevel == "HIGH") {
                 return "(╯°□°）╯︵ ┻━┻ : このサーバーに参加してから10分以上経過したメンバーのみ";
-            } else if (verificationLevel === 4) {
+            } else if (verificationLevel == "VERY_HIGH") {
                 return "┻━┻彡 ヽ(ಠ益ಠ)ノ彡┻━┻ : 電話認証がされているアカウントのみ";
             } else {
                 return "エラー";
@@ -70,11 +70,11 @@ module.exports = class server_ping_command extends Command {
         return message.say({
             embed: {
                 author: {
-                    icon_url: server.iconURL,
+                    icon_url: server.iconURL(),
                     name: `${server.name}の情報`,
                 },
                 thumbnail: {
-                    url: server.iconURL,
+                    url: server.iconURL(),
                 },
                 fields: [
                     { name: "サーバー名", value: server.name, inline: true },
@@ -87,7 +87,7 @@ module.exports = class server_ping_command extends Command {
                     { name: "リージョン", value: server.region, inline: true },
                     { name: "ユーザ数", value: user_count() },
                     { name: "チャンネル数", value: channel_count() },
-                    { name: "役職", value: server.roles.size, inline: true },
+                    { name: "役職", value: server.roles.cache.size, inline: true },
                     { name: "認証レベル", value: verify_level(), inline: true },
                 ],
                 footer: {

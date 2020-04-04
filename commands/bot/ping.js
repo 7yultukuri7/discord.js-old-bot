@@ -12,7 +12,7 @@ module.exports = class PingCommand extends Command {
     }
 
     run(message) {
-        const ping = this.client.ping;
+        const ping = this.client.ws.ping;
         return message.say(`${ping}ms`);
     }
 };

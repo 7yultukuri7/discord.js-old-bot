@@ -1,5 +1,5 @@
 const { Command } = require("discord.js-commando");
-const { RichEmbed, discord } = require('discord.js');
+const { discord } = require('discord.js');
 const pageMenu = require('/app/system/document/about.js');
 
 const config = require("/app/config/main.js");
@@ -25,7 +25,7 @@ module.exports = class extends Command {
                 color: Math.floor(Math.random() * 16777214) + 1,
               	author: {
               		name: `${message.author.tag} / ${message.author.id}`,
-              		icon_url: message.author.avatarURL,
+              		icon_url: message.author.avatarURL(),
               	},
                 fields: [
                     {
@@ -58,7 +58,7 @@ module.exports = class extends Command {
                 color: Math.floor(Math.random() * 16777214) + 1,
                 author: {
                     name: client.user.username,
-                    icon_url: client.user.avatarURL,
+                    icon_url: client.user.avatarURL(),
                 },
                 fields: [
                     {
@@ -90,12 +90,12 @@ module.exports = class extends Command {
                     },
                     {
                         name: "❯ Discordサーバー数",
-                        value: `${message.client.guilds.size}`,
+                        value: `${message.client.guilds.cache.size}`,
                         inline: true
                     },
                     {
                         name: "❯ 全サーバーチャンネル数",
-                        value: `${message.client.channels.size}`,
+                        value: `${message.client.channels.cache.size}`,
                         inline: true
                     },
                     {
@@ -121,7 +121,7 @@ module.exports = class extends Command {
                 color: Math.floor(Math.random() * 16777214) + 1,
                 author: {
                     name: client.user.username,
-                    icon_url: client.user.avatarURL,
+                    icon_url: client.user.avatarURL(),
                 },
                 fields: [
                     {

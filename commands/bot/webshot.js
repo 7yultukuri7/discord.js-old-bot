@@ -52,14 +52,14 @@ message.channel.send('ウェブショットが完了するまでしばらくお�
 		// Read more about all that you can do with the constructor
 		// over at https://discord.js.org/#/docs/main/stable/class/RichEmbed
 		const buffer = await grabPage()
-		const embed = new discord.RichEmbed()
+		const embed = new discord.MessageEmbed()
 			// Set the title of the field
 			.setTitle('Webshot')
 			// Set the color of the embed
-			.setColor(0xff0000)
+			.setColor('#ff0000')
 			// Set the main content of the embed
 			.setDescription(url)
-			.attachFile(buffer)
+	.attachFiles([buffer])
 		console.log('message sent')
 		// Send the embed to the same channel as the message
 		message.channel.send(embed)  

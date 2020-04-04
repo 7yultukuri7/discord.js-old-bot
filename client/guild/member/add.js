@@ -2,7 +2,7 @@ const config = require("../../../config/main.js");
 
 module.exports = async (client, member) => {
     const server = member.guild;
-    const user = member.user;
+    const user = member;
     const welcome_channel = server.channels.find(ch =>
         ch.name.match(/ようこそ/)
     );
@@ -22,7 +22,7 @@ module.exports = async (client, member) => {
             );
             const main_member_role = config.guild.main.role.member;
             if (main_member.roles.has(main_member_role)) {
-                user.addRole(member_role, "自動認証");
+                user.roles.add(member_role, "自動認証");
                 welcome_channel.send(`${user.tag}自動認証しました`);
             } else {
                 welcome_channel.send(

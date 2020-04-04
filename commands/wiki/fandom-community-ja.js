@@ -1,5 +1,5 @@
 const { Command } = require("discord.js-commando");
-const { RichEmbed, discord } = require('discord.js');
+const { discord } = require('discord.js');
 const wiki = require("wikijs").default({
   apiUrl : 'http://community.fandom.com/ja/api.php'
 });
@@ -39,7 +39,7 @@ const wiki = require("wikijs").default({
                 description: summary,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: message.author.avatarURL,
+                    icon_url: message.author.avatarURL(),
                     text: `実行者: ${message.author.tag}`,
                 },
                 thumbnail: {

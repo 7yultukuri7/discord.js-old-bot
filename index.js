@@ -67,6 +67,8 @@ function calcMemory() {
 //--------------------------------------------
 //discord.js
 client.on("ready", async message => {
+  
+  
   /*
   const guild = client.guilds.get("543615084618842132")
   let ccount = ""
@@ -89,7 +91,7 @@ client.on("ready", async message => {
     
 });//*/
   console.log("bot is ready!");
-  client.user.setActivity(`nya!`);
+  client.user.setActivity(`nya! コマンドにゃ～`, { url: 'https://www.youtube.com/watch?v=', type: 'STREAMING' });
 });
 
 client.on("message", async message => {
@@ -104,13 +106,13 @@ client.on("message", async message => {
     if (message.content === "io!remove-remove-543615084618842132") {
       client.emit(
         "guildMemberRemove",
-        message.member || (await message.guild.fetchMember(message.author))
+        message.member || (await message.guild.members.cache.fetch(message.author))
       );
     }
     if (message.content === "io!join-join-543615084618842132") {
       client.emit(
         "guildMemberAdd",
-        message.member || (await message.guild.fetchMember(message.author))
+        message.member || (await message.guild.members.cache.fetch(message.author))
       );
     }
   }

@@ -1,17 +1,24 @@
 dependencies:
+  '@discordjs/opus': 0.1.0
   async: 3.2.0
+  bufferutil: 4.0.1
   canvas: 2.6.1
   cheerio-httpcli: 0.7.4
-  discord.js: 12.0.1
-  discord.js-commando: 0.10.0
+  discord.js: 12.0.2
+  discord.js-commando: github.com/discordjs/Commando/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc
+  erlpack: 0.1.3
   fs: 0.0.2
   moji: github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49
   moment-timezone: 0.5.28
   puppeteer: 2.1.1
+  snekfetch: 4.0.4
+  sodium: 3.0.2
   speedtest-net: 2.1.1
   sqlite3: 4.1.1
+  utf-8-validate: 5.0.2
   webshot: 0.18.0
   wikijs: 6.0.1
+  zlib-sync: 0.1.6
 devDependencies:
   dotenv: 7.0.0
   eslint: 5.16.0
@@ -36,6 +43,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-CU1q0UXQUpFNzNB7gufgoisDHP7n+T3tkqTsp3MNUkVJ5+hS3BCvME8uCXAUFlz+6T2FbTCu75A+yQ7HMKqRKw==
+  /@discordjs/opus/0.1.0:
+    dependencies:
+      node-addon-api: 2.0.0
+      node-pre-gyp: 0.14.0
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-VWsrsgqSktxOEHx9SFcnOWJhYQOsyzaW3JVN73LDSzKrycEjtRIS+axlm4qeMGx60u6RH1SY15b3pl5G4+Y+gA==
   /@sindresorhus/is/0.7.0:
     dev: false
     engines:
@@ -210,6 +225,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
+  /bindings/1.5.0:
+    dependencies:
+      file-uri-to-path: 1.0.0
+    dev: false
+    resolution:
+      integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
   /bl/1.2.2:
     dependencies:
       readable-stream: 2.3.7
@@ -257,6 +278,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-zvj65TkFeIt3i6aj5bIvJDzjjQQGs4o/sNoezg1F1kYap9Nu2jcUdpwzRSJTHMMzG0H7bZkn4rNQpImhuxWX2A==
+  /bufferutil/4.0.1:
+    dependencies:
+      node-gyp-build: 3.7.0
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-xowrxvpxojqkagPcWRQVXZl0YXhRhAtBEIq3VoER1NH5Mw1n1o0ojdspp+GS2J//2gCVyrzQDApQ4unGF+QOoA==
   /cacheable-request/2.1.4:
     dependencies:
       clone-response: 1.0.2
@@ -661,20 +689,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-  /discord.js-commando/0.10.0:
-    dependencies:
-      common-tags: 1.8.0
-      escape-string-regexp: 1.0.5
-      require-all: 2.2.0
-    dev: false
-    engines:
-      node: '>=7.6.0'
-    peerDependencies:
-      discord.js: ^11.2.0
-      sqlite: ^2.0.0
-    resolution:
-      integrity: sha1-v6mL8zEIcDdvPHoNe3Nqaj5dCg8=
-  /discord.js/12.0.1:
+  /discord.js/12.0.2:
     dependencies:
       '@discordjs/collection': 0.1.5
       abort-controller: 3.0.0
@@ -683,7 +698,7 @@ packages:
       prism-media: 1.2.1
       setimmediate: 1.0.5
       tweetnacl: 1.0.3
-      ws: 7.2.2
+      ws: 7.2.3
     dev: false
     engines:
       node: '>=12.0.0'
@@ -695,7 +710,7 @@ packages:
       utf-8-validate: ^5.0.2
       zlib-sync: ^0.1.6
     resolution:
-      integrity: sha512-lUlrkAWSb5YTB1WpSZHjeUXxGlHK8VDjrlHLEP4lJj+etFAellURpmRYl29OPJ/7arQWB879pP4rvhhzpdOF7w==
+      integrity: sha512-iZiEA4Y61gqq/EjFfLXnkRK9pLapnax/vTVDUhs/mAhyqozAy0GOlk/MZI9rSa1iIoKTWRq6P9CRKhLNT2wUnA==
   /doctrine/3.0.0:
     dependencies:
       esutils: 2.0.3
@@ -804,6 +819,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
+  /erlpack/0.1.3:
+    dependencies:
+      bindings: 1.5.0
+      nan: 2.14.0
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-QeG9v8CVsY/a/IoQi8zjn23aYKcziOihAxwjUl3tI/KB4R1FjTtctDAAMovgtpC16S+WiOauers2oWwIOQtKBQ==
   /es6-promise/4.2.8:
     dev: false
     optional: true
@@ -1099,6 +1122,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-qyQ0pzAy78gVoJsmYeNgl8uH8yKhr1lVhW7JbzJmnlRi0I4R2eEDEJZVKG8agpDnLpacwNbDhLNG/LMdxHD2YQ==
+  /file-uri-to-path/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==
   /filename-reserved-regex/2.0.0:
     dev: false
     engines:
@@ -1888,15 +1915,35 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-DUzITvPVDUy6vczKKYTnWc/pBZ0EnjMJnQ3y+Jo5zfKFimJs7S3HFCxCRZYB9FUZcrzUQr3WsmvZgddMEIZv6w==
+  /needle/2.3.3:
+    dependencies:
+      debug: 3.2.6
+      iconv-lite: 0.4.24
+      sax: 1.2.4
+    dev: false
+    engines:
+      node: '>= 4.4.x'
+    hasBin: true
+    resolution:
+      integrity: sha512-EkY0GeSq87rWp1hoq/sH/wnTWgFVhYlnIkbJ0YJFfRgEFlz2RraCjBpFQ+vrEgEdp0ThfyHADmkChEhcb7PKyw==
   /nice-try/1.0.5:
     resolution:
       integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
+  /node-addon-api/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-ASCL5U13as7HhOExbT6OlWJJUV/lLzL2voOSP1UVehpRD8FbSrSDjfScK/KwAvVTI5AS6r4VwbOMlIqtvRidnA==
   /node-fetch/2.6.0:
     dev: false
     engines:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  /node-gyp-build/3.7.0:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-L/Eg02Epx6Si2NXmedx+Okg+4UHqmaf3TNcxd50SF9NQGcJaON3AtU++kax69XV7YWz4tUspqZSAsVofhFKG2w==
   /node-pre-gyp/0.11.0:
     dependencies:
       detect-libc: 1.0.3
@@ -1913,6 +1960,22 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-TwWAOZb0j7e9eGaf9esRx3ZcLaE5tQ2lvYy1pb5IAaG1a2e2Kv5Lms1Y4hpj+ciXJRofIxxlt5haeQ/2ANeE0Q==
+  /node-pre-gyp/0.14.0:
+    dependencies:
+      detect-libc: 1.0.3
+      mkdirp: 0.5.1
+      needle: 2.3.3
+      nopt: 4.0.3
+      npm-packlist: 1.4.8
+      npmlog: 4.1.2
+      rc: 1.2.8
+      rimraf: 2.7.1
+      semver: 5.7.1
+      tar: 4.4.13
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-+CvDC7ZttU/sSt9rFjix/P05iS43qHCOOGzcr3Ry99bXG7VX953+vFyEuph/tfqoYu8dttBkE86JSKBO2OzcxA==
   /nopt/4.0.1:
     dependencies:
       abbrev: 1.1.1
@@ -1921,6 +1984,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-0NRoWv1UFRk8jHUFYC0NF81kR00=
+  /nopt/4.0.3:
+    dependencies:
+      abbrev: 1.1.1
+      osenv: 0.1.5
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-CvaGwVMztSMJLOeXPrez7fyfObdZqNUK1cPAEzLHrTybIua9pMdmmPR5YwtfNftIOMv3DPUhFaxsZMNTQO20Kg==
   /normalize-url/2.0.1:
     dependencies:
       prepend-http: 2.0.0
@@ -2363,10 +2434,12 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
-  /require-all/2.2.0:
+  /require-all/3.0.0:
     dev: false
+    engines:
+      node: '>= 0.8'
     resolution:
-      integrity: sha1-tEIMIzrAKC0P9Jsnf7iAqLXeCJQ=
+      integrity: sha1-Rz1JcEvjEBFc4ST3c4Ox69hnExI=
   /resolve-from/4.0.0:
     engines:
       node: '>=4'
@@ -2509,6 +2582,18 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-Qu+VC3EwYLldKa1fCxuuvULvSJOKEgk9pi8dZeCVK7TqBfUNTH4sFkk4joj8afVSfAYgJoSOetjx9QWOJ5mYoQ==
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
+    dev: false
+    resolution:
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
+  /sodium/3.0.2:
+    dependencies:
+      node-addon-api: 2.0.0
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-IsTwTJeoNBU97km3XkrbCGC/n/9aUQejgD3QPr2YY2gtbSPru3TI6nhCqgoez9Mv88frF9oVZS/jrXFbd6WXyA==
   /sort-keys-length/1.0.1:
     dependencies:
       sort-keys: 1.1.2
@@ -2846,6 +2931,13 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha1-FQWgOiiaSMvXpDTvuu7FBV9WM6k=
+  /utf-8-validate/5.0.2:
+    dependencies:
+      node-gyp-build: 3.7.0
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-SwV++i2gTD5qh2XqaPzBnNX88N6HdyhQrNNRykvcS0QKvItV9u3vPEJr+X5Hhfb1JC0r0e1alL0iB09rY8+nmw==
   /util-deprecate/1.0.2:
     dev: false
     resolution:
@@ -2928,7 +3020,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
-  /ws/7.2.2:
+  /ws/7.2.3:
     dev: false
     engines:
       node: '>=8.3.0'
@@ -2936,7 +3028,7 @@ packages:
       bufferutil: ^4.0.1
       utf-8-validate: ^5.0.2
     resolution:
-      integrity: sha512-2qj/tYkDPDSVf7JiHanwEBwkhxi7DchFewIsSnR33MQtG3O/BPAJjqs4g6XEuayuRqIExSQMHZlmyDLbuSrXYw==
+      integrity: sha512-HTDl9G9hbkNDk98naoR/cHDws7+EyYMOdL1BmjsZXRUjf7d+MficC4B7HLUPlSiho0vg+CWKrGIt/VJBd1xunQ==
   /xtend/4.0.2:
     dev: false
     engines:
@@ -2960,6 +3052,30 @@ packages:
     dev: false
     resolution:
       integrity: sha1-lSj0QtqxsihOWLQ3m7GU4i4MQAU=
+  /zlib-sync/0.1.6:
+    dependencies:
+      nan: 2.14.0
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-B2XGrhlXs/izEks+705vn/aL+nWyPgnS1glyCeH8wgZdOvztRn3ZEdqclj6GoJSeA/iRSqaTlznG2KO1M/GuWg==
+  github.com/discordjs/Commando/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc:
+    dependencies:
+      common-tags: 1.8.0
+      require-all: 3.0.0
+    dev: false
+    engines:
+      node: '>=8.6.0'
+    name: discord.js-commando
+    peerDependencies:
+      '@types/better-sqlite3': ^5.0.0
+      better-sqlite3: ^5.0.0
+      discord.js: ^12.0.0
+      sqlite: ^3.0.0
+    resolution:
+      registry: 'https://registry.npmjs.org/'
+      tarball: 'https://codeload.github.com/discordjs/Commando/tar.gz/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc'
+    version: 0.11.0-dev
   github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49:
     dev: false
     name: moji
@@ -2971,12 +3087,15 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@discordjs/opus': ^0.1.0
   async: ^3.2.0
+  bufferutil: ^4.0.1
   canvas: ^2.6.1
   cheerio-httpcli: ^0.7.4
-  discord.js: ^12.0.1
-  discord.js-commando: ^0.10.0
+  discord.js: ^12.0.2
+  discord.js-commando: 'github:discordjs/Commando'
   dotenv: ^7.0.0
+  erlpack: ^0.1.3
   eslint: ^5.15.2
   eslint-plugin-node: ^9.0.1
   fs: ^0.0.2
@@ -2984,7 +3103,11 @@ specifiers:
   moment-timezone: ^0.5.27
   prettier: ^1.16.4
   puppeteer: ^2.1.0
+  snekfetch: ^4.0.4
+  sodium: ^3.0.2
   speedtest-net: ^2.1.0
   sqlite3: ^4.1.1
+  utf-8-validate: ^5.0.2
   webshot: ^0.18.0
   wikijs: ^6.0.0
+  zlib-sync: ^0.1.6

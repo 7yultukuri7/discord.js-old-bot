@@ -30,7 +30,6 @@ const permissions = {
     CHANGE_NICKNAME: "ニックネームの変更",
     MANAGE_NICKNAMES: "ニックネームの管理",
     MANAGE_ROLES: "役職の管理",
-    MANAGE_ROLES_OR_PERMISSIONS: "",
     MANAGE_WEBHOOKS: "WebHooksの管理",
     MANAGE_EMOJIS: "絵文字の管理",
 };
@@ -57,7 +56,7 @@ module.exports = class role_info extends Command {
 
     run(message, { role }) {
         if (role) {
-            const r_a_p = role.serialize();
+            const r_a_p = role.permissions.serialize();
             const role_permissions = Object.keys(r_a_p)
                 .filter(key => r_a_p[key] && permissions[key])
                 .map(key => permissions[key])
@@ -94,10 +93,10 @@ module.exports = class role_info extends Command {
             return message.say({
                 embed: {
                     author: {
-                        icon_url: message.guild.iconURL,
+                        icon_url: message.guild.iconURL(),
                         name: `${message.guild.name}の役職一覧`,
                     },
-                    description: `${message.guild.roles
+                    description: `${message.guild.roles.cache
                         .map(r => r.name)
                         .join("\n")}`,
                     color: 0xb8e986,
