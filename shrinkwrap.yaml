@@ -1,11 +1,10 @@
 dependencies:
-  '@discordjs/opus': 0.1.0
   async: 3.2.0
   bufferutil: 4.0.1
   canvas: 2.6.1
   cheerio-httpcli: 0.7.4
   discord.js: 12.1.1
-  discord.js-commando: github.com/discordjs/Commando/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc
+  discord.js-commando: github.com/discordjs/Commando/deff2eb9bfc8308f0bfa6ee8ddbc847fec9ddadb
   erlpack: 0.1.3
   fs: 0.0.2
   moji: github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49
@@ -31,13 +30,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-a9gxpmdXtZEInkCSHUJDLHZVBgb1QS0jhss4cPP93EW7s+uC5bikET2twEF3KV+7rDblJcmNvTR7VJejqd2C2g==
-  /@babel/helper-validator-identifier/7.9.0:
+  /@babel/helper-validator-identifier/7.9.5:
     dev: true
     resolution:
-      integrity: sha512-6G8bQKjOh+of4PV/ThDm/rRqlU7+IGoJuofpagU5GlEl29Vv0RGqqt86ZGRV8ZuSOY3o+8yXl5y782SMcG7SHw==
+      integrity: sha512-/8arLKUFq882w4tWGj9JYzRpAlZgiWUJ+dtteNTDqrRBz9Iguck9Rn3ykuBDoUwh2TO4tSAJlrxDUOXWklJe4g==
   /@babel/highlight/7.9.0:
     dependencies:
-      '@babel/helper-validator-identifier': 7.9.0
+      '@babel/helper-validator-identifier': 7.9.5
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
@@ -47,14 +46,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-CU1q0UXQUpFNzNB7gufgoisDHP7n+T3tkqTsp3MNUkVJ5+hS3BCvME8uCXAUFlz+6T2FbTCu75A+yQ7HMKqRKw==
-  /@discordjs/opus/0.1.0:
-    dependencies:
-      node-addon-api: 2.0.0
-      node-pre-gyp: 0.14.0
-    dev: false
-    requiresBuild: true
-    resolution:
-      integrity: sha512-VWsrsgqSktxOEHx9SFcnOWJhYQOsyzaW3JVN73LDSzKrycEjtRIS+axlm4qeMGx60u6RH1SY15b3pl5G4+Y+gA==
   /@sindresorhus/is/0.7.0:
     dev: false
     engines:
@@ -63,7 +54,7 @@ packages:
       integrity: sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
   /@types/cheerio/0.22.17:
     dependencies:
-      '@types/node': 13.11.0
+      '@types/node': 13.11.1
     dev: false
     resolution:
       integrity: sha512-izlm+hbqWN9csuB9GSMfCnAyd3/57XZi3rfz1B0C4QBGVMp+9xQ7+9KYnep+ySfUrCWql4lGzkLf0XmprXcz9g==
@@ -71,10 +62,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-nKUs2jY/aZxpRmwqbM2q2RPqenM=
-  /@types/node/13.11.0:
+  /@types/node/13.11.1:
     dev: false
     resolution:
-      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
   /abbrev/1.1.1:
     dev: false
     resolution:
@@ -613,7 +604,7 @@ packages:
       file-type: 6.2.0
       is-stream: 1.1.0
       seek-bzip: 1.0.5
-      unbzip2-stream: 1.4.0
+      unbzip2-stream: 1.4.1
     dev: false
     engines:
       node: '>=4'
@@ -1949,22 +1940,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-TwWAOZb0j7e9eGaf9esRx3ZcLaE5tQ2lvYy1pb5IAaG1a2e2Kv5Lms1Y4hpj+ciXJRofIxxlt5haeQ/2ANeE0Q==
-  /node-pre-gyp/0.14.0:
-    dependencies:
-      detect-libc: 1.0.3
-      mkdirp: 0.5.5
-      needle: 2.4.1
-      nopt: 4.0.3
-      npm-packlist: 1.4.8
-      npmlog: 4.1.2
-      rc: 1.2.8
-      rimraf: 2.7.1
-      semver: 5.7.1
-      tar: 4.4.13
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-+CvDC7ZttU/sSt9rFjix/P05iS43qHCOOGzcr3Ry99bXG7VX953+vFyEuph/tfqoYu8dttBkE86JSKBO2OzcxA==
   /nopt/4.0.3:
     dependencies:
       abbrev: 1.1.1
@@ -2158,7 +2133,7 @@ packages:
       integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==
   /parse5/3.0.3:
     dependencies:
-      '@types/node': 13.11.0
+      '@types/node': 13.11.1
     dev: false
     resolution:
       integrity: sha512-rgO9Zg5LLLkfJF9E6CCmXlSE4UVceloys8JrFqCcHloC3usd/kJCyPDwH2SOlzix2j3xaP9sUX3e8+kvkuleAA==
@@ -2415,12 +2390,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
-  /require-all/3.0.0:
+  /require-all/2.2.0:
     dev: false
-    engines:
-      node: '>= 0.8'
     resolution:
-      integrity: sha1-Rz1JcEvjEBFc4ST3c4Ox69hnExI=
+      integrity: sha1-tEIMIzrAKC0P9Jsnf7iAqLXeCJQ=
   /resolve-from/4.0.0:
     engines:
       node: '>=4'
@@ -2886,13 +2859,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /unbzip2-stream/1.4.0:
+  /unbzip2-stream/1.4.1:
     dependencies:
       buffer: 5.5.0
       through: 2.3.8
     dev: false
     resolution:
-      integrity: sha512-kVx7CDAsdBSWVf404Mw7oI9i09w5/mTT/Ruk+RWa64PLYKvsAucLLFHvQtnvjeADM4ZizxrvG5SHnF4Te4T2Cg==
+      integrity: sha512-sgDYfSDPMsA4Hr2/w7vOlrJBlwzmyakk1+hW8ObLvxSp0LA36LcL2XItGvOT3OSblohSdevMuT8FQjLsqyy4sA==
   /uri-js/4.2.2:
     dependencies:
       punycode: 2.1.1
@@ -3034,23 +3007,22 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-B2XGrhlXs/izEks+705vn/aL+nWyPgnS1glyCeH8wgZdOvztRn3ZEdqclj6GoJSeA/iRSqaTlznG2KO1M/GuWg==
-  github.com/discordjs/Commando/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc:
+  github.com/discordjs/Commando/deff2eb9bfc8308f0bfa6ee8ddbc847fec9ddadb:
     dependencies:
       common-tags: 1.8.0
-      require-all: 3.0.0
+      escape-string-regexp: 1.0.5
+      require-all: 2.2.0
     dev: false
     engines:
-      node: '>=8.6.0'
+      node: '>=7.6.0'
     name: discord.js-commando
     peerDependencies:
-      '@types/better-sqlite3': ^5.0.0
-      better-sqlite3: ^5.0.0
-      discord.js: ^12.0.0
-      sqlite: ^3.0.0
+      discord.js: ^11.2.0
+      sqlite: ^2.0.0
     resolution:
       registry: 'https://registry.npmjs.org/'
-      tarball: 'https://codeload.github.com/discordjs/Commando/tar.gz/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc'
-    version: 0.11.0-dev
+      tarball: 'https://codeload.github.com/discordjs/Commando/tar.gz/deff2eb9bfc8308f0bfa6ee8ddbc847fec9ddadb'
+    version: 0.10.0
   github.com/niwaringo/moji/a1511d1776e460007a41d57d147739fc56dd7b49:
     dev: false
     name: moji
@@ -3062,13 +3034,12 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@discordjs/opus': ^0.1.0
   async: ^3.2.0
   bufferutil: ^4.0.1
   canvas: ^2.6.1
   cheerio-httpcli: ^0.7.4
   discord.js: ^12.1.1
-  discord.js-commando: 'github:discordjs/Commando'
+  discord.js-commando: 'github:discordjs/Commando#djs-v11'
   dotenv: ^7.0.0
   erlpack: ^0.1.3
   eslint: ^5.15.2
@@ -3077,7 +3048,7 @@ specifiers:
   moji: 'git+https://github.com/niwaringo/moji.git'
   moment-timezone: ^0.5.27
   prettier: ^1.16.4
-  puppeteer: ^2.1.0
+  puppeteer: ^2.1.1
   snekfetch: ^4.0.4
   sodium: ^3.0.2
   speedtest-net: ^2.1.0

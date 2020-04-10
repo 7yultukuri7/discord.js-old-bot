@@ -6,6 +6,10 @@ const client_module = require("./client/import.js");
 
 const config = require("/app/config/main.js");
 
+  const discord = require("discord.js");
+  const client = new discord.Client();
+
+/*
 const client = new CommandoClient({
   commandPrefix: config.prefix,
   owner: [config.owner.id],
@@ -20,7 +24,7 @@ client.registry
   ])
   .registerDefaultTypes()
   .registerCommandsIn(`${__dirname}/commands/`);
-
+*/
 //--------------------------------------------
 //test
 function calcCPU() {
