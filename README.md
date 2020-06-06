@@ -10,3 +10,6 @@
 つまり、今後モジュール・スクリプトに脆弱性、バグの悪用が発覚しても、修正しません。
 
 このNode.jsの実行は**自己責任**でお願いします。
+
+# ライセンス(license) MIT
+MITライセンスとは https://ja.m.wikipedia.org/wiki/MIT_License
