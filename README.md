@@ -1,6 +1,8 @@
 # 7yultukuri7-old-discord-bot
 OS: Linux 
+
 Node.js: v12
+
 discord.js: v12(一部スクリプトが、v11のままになっていて動作しない場合があります)
 
 # 一部のモジュールのバージョンが古いので動作しない場合があります。
