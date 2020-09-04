@@ -21,7 +21,7 @@
     "discord.js-commando": "github:discordjs/Commando#djs-v11",
     "fs": "^0.0.2",
     "moji": "git+https://github.com/niwaringo/moji.git",
-    "moment-timezone": "^0.5.27",
+    "moment-timezone": "^0.5.31",
     "puppeteer": "^2.1.1",
     "speedtest-net": "^2.1.0",
     "sqlite3": "^4.1.1",
