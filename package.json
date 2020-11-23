@@ -17,7 +17,7 @@
     "async": "^3.2.0",
     "canvas": "^2.6.1",
     "cheerio-httpcli": "^0.7.4",
-    "discord.js": "^12.1.1",
+    "discord.js": "^12.5.0",
     "discord.js-commando": "github:discordjs/Commando#djs-v11",
     "fs": "^0.0.2",
     "moji": "git+https://github.com/niwaringo/moji.git",
