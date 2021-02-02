@@ -22,7 +22,7 @@
     "fs": "^0.0.2",
     "moji": "git+https://github.com/niwaringo/moji.git",
     "moment-timezone": "^0.5.27",
-    "puppeteer": "^2.1.1",
+    "puppeteer": "^6.0.0",
     "speedtest-net": "^2.1.0",
     "sqlite3": "^4.1.1",
     "webshot": "^0.18.0",
